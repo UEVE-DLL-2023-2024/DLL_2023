@@ -42,7 +42,6 @@ footer: Développement de logiciel libre | :e-mail: sebastien.morais@proton.me
   }
 </style>
 
-
 # Contenu et objectifs du cours
 
 Présenter comment faire correctement (et mal) de l'open source
@@ -142,8 +141,9 @@ Focalisation sur les problèmes associés au développement de logiciel libre.
 ---
 
 <!-- header: I.1 - Introduction -->
+</br> </br> </br>
 
-# Dans quelle mesure sont visible / présent les logiciels libres / open source ? 
+:question: Dans quelle mesure sont visible / présent les logiciels libres / open source ? 
 
 ---
 
