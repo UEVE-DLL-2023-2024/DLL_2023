@@ -69,8 +69,14 @@ footer: Développement de logiciel libre | :e-mail: sebastien.morais@proton.me
 ## II.5 - Gérer l'ouverture du projet
 
 ---
+</br></br></br></br></br>
 
-<!-- header: I.1 - Ressusciter un projet abandonné -->
+# II.0 - Ressusciter un projet abandonné
+
+
+---
+
+<!-- header: II.0 - Ressusciter un projet abandonné -->
 
 </br> </br> </br>
 
@@ -173,7 +179,13 @@ La dernière étape consiste à construire la communauté du projet :
 => *N'attendez pas que les autres fassent le travail pour vous !*
 
 ---
-<!-- header: I.2 - Un petit point avant de commencer -->
+</br></br></br></br></br>
+
+# II.1 - Un petit point avant de commencer
+
+---
+
+<!-- header: II.1 - Un petit point avant de commencer -->
 
 # Les apparences comptent !
 </br>
@@ -202,7 +214,15 @@ En quelques seconde, le visiteur détermine l'investissement dans la présentati
  
 Dégager une aura de préparation => *"Votre temps ne sera pas perdu"*
 
+:thought_balloon: https://github.com/Sci-Hook
+
 ---
+</br></br></br></br></br>
+
+# II.2 - Démarrage d'un nouveau projet
+
+---
+
 
 <!-- header: II.2 - Démarrage d'un nouveau projet -->
 
@@ -577,6 +597,12 @@ A mettre en place pour les projets avec:
 Types de supports : capture d'écran, vidéos de quelques minutes, fichiers exemples, ...
 
 ---
+</br></br></br></br></br>
+
+# II.3 - Le choix de la licence
+
+---
+
 
 <!-- header: II.3 - Le choix de la licence -->
 
@@ -674,6 +700,11 @@ Comment met-on en œuvre une licence sur un projet ?
 > This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of FITNESS FOR A PARTICULAR PURPOSE or MERCHANTABILITY. See the GNU General Public License for more details.
 >
 > You should have received a copy of the GNU General Public License along with this program. If not, see <https://www.gnu.org/licenses/>.
+
+---
+</br></br></br></br></br>
+
+# II.4 - Instaurer une ambiance collaborative
 
 ---
 
@@ -864,3 +895,135 @@ Avez-vous des idées sur des bon comportements à retrouver concernant la produc
 Pourquoi se focaliser sur les apports récents plutôt que sur les anciens ?
 
 ---
+
+# Autre exemple de bon comportement (code)
+
+Avez-vous des idées sur des bon comportements à retrouver concernant la production de code ?
+
+**La revue de code** est un pratique saine qui peut s'appliquer sur:
+- du code déjà présent depuis un moment;
+- du code récent issue d'un ou plusieurs commit
+
+**Objectif** : rechercher des bugs et potentielles améliorations
+
+Pourquoi se focaliser sur les apports récents plutôt que sur les anciens ?
+**Social** : intérêt max du contributeur; importance de la contrib; point d'entrée
+
+:thought_balloon: La revue de code est attendue et régulière !
+
+---
+
+</br></br></br></br></br>
+
+# II.5 - Gérer l'ouverture du projet
+
+---
+
+<!-- header: II.5 - Gérer l'ouverture du projet -->
+
+# Déclarez le projet comme libre dès le début!
+
+:warning: La difficulté pour ouvrir un code privé augmente avec le temps
+
+Quelles peuvent être les raisons de cette difficulté ?
+
+---
+
+# Déclarez le projet comme libre dès le début!
+
+:warning: La difficulté pour ouvrir un code privé augmente avec le temps
+
+Quelles peuvent être les raisons de cette difficulté ?
+
+- Contributeurs habitués à travailler en environnement **propriétaire**
+  - nouvelles méthodes de travail;
+  - questions distrayantes venant d’étrangers;
+  - exposition du code à des étrangers qui vont *"juger"* le résultat final
+  - documentation toujours inadéquate
+  - manque d’assurance exacerbé
+
+---
+
+# Déclarez le projet comme libre dès le début!
+</br>
+
+- Prise de décision(s) incompatible(s) avec le libre !
+  - situations : correctif de bug (court terme) vs compatibilité libre / open source (future)
+  - en production *"situation urgente"* >>> *"élégance"*
+
+:warning: Accumulation d'une dette technique qu'il faudra payer à l’ouverture !
+
+Avez-vous des exemples d'une telle dette technique ?
+
+---
+
+# Déclarez le projet comme libre dès le début!
+</br>
+
+- **Exemples de dette à payer** :
+  - exemples basés sur des données issues d'informations confidentielles
+  - commentaires exprimant des sentiments négatifs sur les requêtes utilisateurs
+  - problème de licences dû à des dépendances sur d'autres bibliothèques
+  - problème de compilation hors environnement interne
+  - rapport de bug avec des informations critiques ne devant pas être publique
+  - documentation écrite dans un format interne, …
+
+---
+
+# Déclarez le projet comme libre dès le début!
+
+Comment pouvez-vous gérer les étapes de nettoyage ?
+
+- Retravailler l'historique entier du projet ?
+- Nettoyer la dernière version et la rendre libre / open source ?
+
+**Solution mécaniques** :
+
+- Données confidentielles -> Sortie d'une version écrémée du projet
+- Dépendances propriétaires -> Rercherche d'alternative libre / open source
+- ...
+
+:warning: Le coût de la dette technique peut être non négligeable et conduire vers une *"fausse"* ouverture du projet !
+
+---
+
+# Annoncer le projet
+
+Une fois le projet présentable : annoncez le !
+
+Processus simple :
+- soumettre le projet sur un site d’hébergement, e.g. https://sourceforge.net/
+:thought_balloon: sites scrutés pour leurs projets open sources
+- courrier électronique à une liste de diffusion pertinente
+
+:warning: Il n'est pas nécessaire d’avoir du code fonctionnel pour
+démarrer un projet libre / l’open source !
+- un simple document de conception peut suffire;
+- ceci dit, avoir du code est une bonne règle de lancement !
+
+---
+
+# Exemple de courrier électronique
+<style scoped>
+  section {
+    font-size: 20px;
+  }
+</style>
+
+To: discuss@lists.example.org
+Subject: [ANN] Elo un projet de gestion de versions 
+Reply-to: dev@elo.org
+
+Ceci est un message unique d'annonce de création du projet Elo, un outil gestion de versions basé sur Git et Gitlab. Il est doté d'une API simple et conçu pour les utilisateurs de code de simulation désirant pouvoir versionner et partager simplement leurs études. Elo fonctionne, est toujours en développement actif, et recherche des développeurs et des testeurs !
+Site du projet: https://www.elo.org
+
+Fonctionnalités :
+- configuration assistée (paramètrage git & gitlab);
+- gestion simple de dépôt par snapshot;
+- (prévu) gestion de collaboration autours du dépôt;
+- (prévu) création de groupes et gestion des collaborations.
+
+Pré-requis : python 3 ou supérieur; Git; accès à un serveur Gitlab.
+
+Merci,
+M. X

@@ -608,7 +608,7 @@ Exemples de licences de logiciel libre incompatible avec la GPL
 Exigences incompatibles, e.g. interdiction d’utiliser des noms en rapport avec Apache
 
 - Licence BSD originale https://directory.fsf.org/wiki/License:BSD-4-Clause
-Clause publicitaire BSD : mention du copyright dans toute publicité ou document fourni avec le logiciel)
+Clause publicitaire BSD : mention du copyright dans toute publicité ou document fourni avec le logiciel
 
 ---
 
