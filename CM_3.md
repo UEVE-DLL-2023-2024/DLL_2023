@@ -108,7 +108,7 @@ Liste d’outils standards à mettre en place pour gérer l'information:
 ## III.1 – Site web
 ## III.2 - Liste de diffusion & Forum
 ## III.3 – Gestionnaire de versions
-## III.4 Traqueur de bogues
+## III.4 - Gestionnaire de bogues
 ## III.5 - Autres
 
 ---
@@ -973,20 +973,25 @@ Margebot : https://github.com/smarkets/marge-bot
 
 # Utilisations de l'outil de gestion de version : notifications
 
-https://gitlab.com/gitlab-org/gitlab/-/issues/244345#note_1462352182
+Exemples :
+1) https://gitlab.com/gitlab-org/gitlab/-/issues/244345#note_1462352182
 
-https://gitlab.com/gitlab-org/gitlab-runner/-/issues/28121#note_1525037572
+2) https://gitlab.com/gitlab-org/gitlab-runner/-/issues/28121#note_1525037572
 
+3) https://github.com/python-gitlab/python-gitlab/issues/1647
 
-https://github.com/python-gitlab/python-gitlab/issues/1647
-
-**Mail associé** :
+**Mail associé à 3)** :
 
 <style scoped>
   section {
-    font-size: 21px;
+    font-size: 17px;
   }
 </style>
+
+Expéditeur : ****   
+À:	python-gitlab/python-gitlab <python-gitlab@noreply.github.com>
+Cc:	SébastienM <author@noreply.github.com>
+Répondre à:	python-gitlab/python-gitlab <reply+AJZUITNOS6ERAL4HUC6W6457PRSHFEVBNHHD255RXY@reply.github.com>
 
 The GitLab API does not officially support Kerberos for authentication so this will not be done with the library natively.
 
@@ -999,3 +1004,274 @@ https://python-gitlab.readthedocs.io/en/stable/api-usage.html#advanced-http-conf
 You are receiving this because you authored the thread. Reply to this email directly, view it on GitHub, or unsubscribe. Triage notifications on the go with GitHub Mobile for iOS or Android. 
 
 ---
+<!-- header: III.4 - Gestionnaire de bogues -->
+
+</br></br></br></br></br>
+
+# III.4 - Gestionnaire de bogues
+
+---
+
+# Le gestionnaire de bogues
+
+Les outils de gestion de version peuvent intégrer des gestionnaires de bogues, e.g. Github, Gitlab, ... **mais** il est possible d'utiliser d'autres gestionnaires.
+Par exemple : https://docs.gitlab.com/ee/integration/jira/
+
+:warning: Le terme *"gestionnaire de bogues"* est trompeur car il ne se limite pas aux bogues. Il est utilisé pour suivre tout ce qui a un début, une fin et des états de transitions entre les deux !
+
+**Ticket (issue)** : élément de la base de données du gestionnaire
+
+:thought_balloon: Terme utilisé pour différencier le comportement rencontré par l'utilisateur, de l'ensemble d'informations associées : discussion, résolution, ...
+
+---
+
+# Cycle de vie d'un ticket
+
+1) Ouverture d'un ticket : rempli les informations demandées par le traqueur
+Par exemple: résumé, description, recette de reproduction de bogue, ..
+:thought_balloon: A l'ouverture, le ticket est en *zone d'attente*, i.e. ouvert mais pas encore intégré dans la *conscience du projet*
+
+2) Lecture du ticket par des tiers
+:thought_balloon: Réaction à celui-ci : commentaires, demandes d’éclaircissement si nécessaire, ...
+
+3) Reproduction du bogue (si déclaration associée à un bogue)
+Validation par un tiers de l'existence du bogue
+:thought_balloon: Confirmation à l'émetteur qu'il a contribué au projet en signalant un bogue avéré
+
+---
+
+# Cycle de vie d'un ticket
+
+4) Diagnostique du bogue : identification de la cause et estimation de l'effort nécessaire à la résolution. Il est aussi possible d'attribuer le ticket à quelqu'un et/ou de définir un niveau de priorité à associer au ticket.
+:thought_balloon: Notez ces informations dans le ticket !
+
+5) Ordonnancer la résolution du ticket (étape optionnelle si la résolution est rapide)
+:thought_balloon: Définir s'il est bloquant pour certaines version et, potentiellement, décider dans quelle prochaine version le bogue devra être corrigé
+:warning: Ne définit pas nécessairement une date butoir
+
+---
+
+# Cycle de vie d'un ticket
+
+6) Correction du bogue : fermeture du ticket
+:thought_balloon: Les changements sont accessibles même après la fermeture du ticket. Ceci est d'autant plus intéressant que certains ticket sont réouvert quand un bogue se réitère (on parle alors de **régression**) !
+
+Exemples : 
+
+https://gitlab.com/gitlab-org/gitlab/-/issues/372545
+
+https://github.com/pylint-dev/pylint/issues/8947
+
+---
+
+# Caractéristiques techniques utiles
+
+Le gestionnaire de bogue étant un **élément centrale** de la vie d’un projet libre / open source, il doit posséder certaines fonctionnalités :
+
+- Gestionnaire connecté au courrier électronique :
+  - Une modification apportée à un ticket déclenche un courrier de notification (e.g. commentaire, status, ...)
+  - Possibilité de créer de ticket / changer le status d'une ticket
+
+- Formulaire de ticket standardisé : avoir un endroit où enregistrer l'adresse courrier du rapporteur ou des informations de contacts
+:thought_balloon: Ne devrait pas requérir une adresse mail ou un identifiant (anonymat)
+
+---
+
+# Caractéristiques techniques utiles
+
+- Gestionnaire ayant une API :
+  - Moyen de personnaliser le comportement du traqueur, e.g. l'étendre avec des logiciels tiers, ...
+  - Possibilité de récupération des tickets (utile pour la migration vers un autre outil)
+
+https://python-gitlab.readthedocs.io/en/stable/gl_objects/issues.html
+https://pygithub.readthedocs.io/en/stable/examples/Issue.html
+
+
+:thought_balloon: Intérêt de l'abonnement : intégration facile du trafic sur le ticket dans le flux de messagerie quotidien !
+=> **Centralisation de l'information**
+
+---
+
+# Points sensibles
+
+**Problème** qui peut rapidement survenir : **grosse charge** dûe à des **tickets doublons** et/ou des **tickets invalides**
+
+Quelles contre mesures pouvez vous mettre en place ? 
+
+---
+
+# Points sensibles
+
+**Problème** qui peut rapidement survenir : **grosse charge** dûe à des **tickets doublons** et/ou des **tickets invalides**
+
+Quelles contre mesures pouvez vous mettre en place ? 
+- Avis bien visible détaillant comment savoir si c'est bien un bogue et si ce n'est pas un ticket doublon (i.e. comment chercher)
+Exemple : https://gitlab.com/gitlab-org/gitlab/-/issues/new
+- (Humain) surveiller et fermer les tickets pour doublons / invalidité
+:thought_balloon: Approche utilisée universellement et  pouvant s’appuyer sur la redirection automatique des tickets vers des personnes dédiées à certains type de tickets
+
+---
+
+# Points sensibles
+
+- (Humain) Encourager la confirmation du bogue par un tiers
+:thought_balloon: Prise de contact via forum, IRC, ... pour confirmer l'existence du bogue avant l'ouverture du ticket 
+:thought_balloon: Approche facilitant la détection de ticket doublon
+
+Dans le cas d'une ouverte sans confirmation par un tiers il est important de :
+- Répondre avec retenue, remercier et encourager le rapporteur à faire confirmer son bogue
+- Valider le ticket s'il est clairement valide et n'est pas un doublon
+- Sinon, fermer le ticket et demander au rapporteur de le rouvrir après confirmation
+
+---
+
+<!-- header: III.5 - Autres -->
+
+</br></br></br></br></br>
+
+# III.5 - Autres
+
+---
+
+# IRC / Salon de discussion en temps réel
+
+<style scoped>
+  section {
+    font-size: 28px;
+  }
+</style>
+
+
+**Intérêt** : échanges entre utilisateurs et développeurs en temps réel !
+
+IRC (Internet Relay Chat) : interface basée sur du texte
+:thought_balloon: Existe depuis longtemps et est un élément clef dans la communication de nombreux projets open source
+
+Systèmes de discussion en temps réel plus récents (basés sur le web) :
+– Mattermost (open source) https://mattermost.com/
+– Element (open source) https://element.io/
+– Microsoft Teams (propriétaire) https://www.microsoft.com/fr-fr/microsoft-teams/
+– Slack (propriétaire) https://slack.com/intl/fr-fr/
+– Discord (propriétaire) https://discord.com/
+– Talkspirit (propriétaire) <-- Français ! https://www.talkspirit.com/
+– ....
+
+---
+
+<style scoped>
+  section {
+    font-size: 25px;
+  }
+</style>
+
+# Wiki
+
+Barrière la plus basse possible pour contribuer à un projet (click & edit)
+
+:warning: Besoin d'un effort centralisé pour être maintenu :
+- organisation et éditions cohérentes;
+- assurer la clarté d'une page / section vis-à-vis de l'audience cible;
+- mise en page simple et agréable (facilite l'intégration d'éditions);
+- documenter les normes d'édition du wiki !
+Wikipedia: documentation sur l'écrire de nouvelles notes, maintenir un certain point de vue, quel type d’édition réaliser / éviter, un processus de résolution de conflit d’édition, …
+
+**Choix du wiki** :
+- si utilisation d'un site d'hébergement : utiliser le wiki associé !
+- sinon: choisir en fonction de vos critères (e.g. ACL, ...) : https://www.wikimatrix.org/ ou https://en.wikipedia.org/wiki/Comparison_of_wiki_software
+
+---
+
+# Forum de questions - réponses
+
+Composante attendue et destinée aux utilisateurs
+
+Similaire à une FAQ (Frequently Asked Questions) avec des mise à jours en temps réel
+Exemples de forum de questions-réponses connus : **StackOverflow** / **Reddit**
+
+Quand pensez-vous qu’il est bien de le démarrer ?
+
+---
+
+# Forum de questions - réponses
+
+Composante attendue et destinée aux utilisateurs
+
+Similaire à une FAQ (Frequently Asked Questions) avec des mise à jours en temps réel
+Exemples de forum de questions-réponses connus : **StackOverflow** / **Reddit**
+
+Quand pensez-vous qu’il est bien de le démarrer ?
+
+:thought_balloon: **Pas de moment précis**, sauf si votre projet apparaît souvent dans StackOverflow / Reddit !
+
+:warning: Si vous vous retrouvez dans l'état de fait où il existe une étiquette / fils de discussion au nom de votre projet c’est qu’il est même tard pour s’en occuper !
+
+---
+
+# Services de réseaux sociaux
+
+Utilisation de services de microblog pour échanger avec la communauté du projet : blagues courtes; annonces qui peuvent être facilement partagées et / ou répondues.
+
+Exemple de site :
+- Mastodon : https://mastodon.social/about
+- Twitter : https://twitter.com/
+
+:warning: Evitez d'utilisation d'autres types de services (médias sociaux grand publique comme Facebook / Instagram)
+:thought_balloon: Investissement trop important (en temps et attention) pour les retombées associées
+
+---
+
+# Infrastructure de traduction
+
+L’activité autours de la traduction inclus : la documentation, l’interface utilisateur d’exécution, messages d’erreur, …
+
+:thought_balloon: Pas forcément besoin d’avoir une plateforme séparée du dépôt du projet mais cela peut être intéressant car :
+- les traducteurs ne sont pas tous des développeurs et ne sont pas toujours familiés des logiciels de gestion de version / site d’hébergement de projet
+- le processus de traduction peut être réalisé plus efficacement avec des outils dédiés
+
+Exemple de plateformes de traductions en ligne : http://zanata.org/ et https://translatewiki.net/
+
+---
+
+# Git attributes
+
+L'utilisation de **différents OS** (Windows, Linux, MacOs) ou **éditeurs de code** (Visual Studio Code, Sublime Text, CLion) peuvent mener à des conflits.
+
+Exemple du saut de ligne (EOL):
+- sur une machine Windows : par défaut Carriage Return Line Feed (CRLF)
+- sur une machine Linux/MacOS : Line Feed (LF)
+
+**Problématique** : outil de formattage avec une propriété de fin de ligne définie
+
+**Solution** : gitattributes pour utiliser Git et modifier le comportement par défaut de certaines opérations sur les fichiers et répertoires.
+Exemple : https://github.com/ansys/pyaedt/blob/main/.gitattributes
+Documentation : https://www.git-scm.com/docs/gitattributes
+
+---
+
+# Precommit
+
+Idée générale : **analyser le code pour imposer des conventions avant commit** !
+
+**Exemple de solution** : https://pre-commit.com/
+
+Applications possibles :
+- Convention pour les messages de commits, e.g. https://www.conventionalcommits.org/fr/v1.0.0/
+- Formatter du code automatiquement, e.g. https://pypi.org/project/black/
+- Valider le code au regard d'une norme, e.g. https://pypi.org/project/flake8/
+- Corriger les fautes d'orthographe courantes dans les fichiers texte, e.g. https://github.com/codespell-project/codespell
+
+Exemple : https://github.com/ansys/pyaedt/blob/main/.pre-commit-config.yaml
+
+---
+
+# CI & Codecov
+
+:thought_balloon: Rappel du cours de TECHNOLOG de Master 1 ... 
+
+Exemple d'outil mettant à dispositions des informations sur la couverture du code dans votre flux de travail : **Codecov** (https://about.codecov.io/)
+
+:thought_balloon: Solution utilisée dans beaucoup de projet libre / open source, permettant : 
+- d'analyser rapidement le taux de couverture et le risque associé à une PR;
+- de bloquer certaines PR n'atteignant pas un seuil;
+- de séparez et catégorisez vos rapports de couverture en fonction des tests et des fonctionnalités de votre projet;
+- ....
