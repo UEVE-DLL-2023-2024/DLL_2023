@@ -139,6 +139,11 @@ Focalisation sur les problèmes associés au développement de logiciel libre.
 <br/>
 
 ---
+</br></br></br></br></br>
+
+# I.1 - Introduction
+
+---
 
 <!-- header: I.1 - Introduction -->
 </br> </br> </br>
@@ -223,6 +228,11 @@ Concrètement:
 - une interface à travers laquelle les développeurs / managers sont exposés à des personnes et des idées nouvelles.
 
 => Mêmes bénéfices qu'une conférence sans les frais associés.
+
+---
+</br></br></br></br></br>
+
+# I.2 Un peu d'histoire
 
 ---
 
@@ -475,7 +485,7 @@ Les sociétés commencent à avoir un rôle plus actif dans l'open source :
 
 # Libre vs Open Source : Un besoin de clarification inévitable
 
-La succès du logiciel dans le monde des affaires à rendu se besoin inévitable !
+Le succès du logiciel dans le monde des affaires a rendu ce besoin inévitable !
 
 :warning: Ambiguïté entre *gratuit* et libre, liée à l'anglais *"free"*
 
@@ -582,8 +592,8 @@ Le logiciel libre s’oppose au logiciel propriétaire :
 
 Le logiciel libre doit être utilisable, développable et distribuable dans un cadre commercial !
 
-:thought_balloon: un des objectifs du logiciel libre est de remplacer les programmes propriétaires comparables
-:warning: possible si et seulement si les entreprises ont l'autorisation de l'utiliser !
+:thought_balloon: Un des objectifs du logiciel libre est de remplacer les programmes propriétaires comparables
+:warning: Possible si et seulement si les entreprises ont l'autorisation de l'utiliser !
 
 ---
 
@@ -592,7 +602,7 @@ Le logiciel libre doit être utilisable, développable et distribuable dans un c
 
 Parmi tous les programmes qui sont open source, seule une minuscule fraction n'est pas libre
 
-:thought_balloon: certaines licences open source sont trop restrictives pour être libre
+:thought_balloon: Certaines licences open source sont trop restrictives pour être libre
 Exemple : *Open Watcom* est non libre car sa licence ne permet pas d'en faire une version modifiée et de l'utiliser en privé
 
 Une idéologie différente du logiciel libre : *"plus pragmatique"* et prône la collaboration efficace en matière de développement logiciel
@@ -620,6 +630,12 @@ Liste exhaustive des possibilités de redistribution sous certaines licences
 
 - Mozilla Public Licence (MPL) version 1.1 https://directory.fsf.org/wiki/License:MPL-1.1
 Incompatibilité juridique interdisant de lier un module couvert par la GPL et un module couvert par la MPL
+
+---
+</br></br></br></br></br>
+
+# I.3  Échange oral / débat : contribution au libre / à l’open source
+
 
 ---
 <!-- header: I.3  Échange oral / débat : contribution au libre / à l’open source
@@ -795,7 +811,7 @@ Structure organisationnelle classique :
 
 - utilisateur (user) : utilisateur du projet.
 
-:thought_balloon: potentielle existence d'équipes dédiées à certaines tâches
+:thought_balloon: Potentielle existence d'équipes dédiées à certaines tâches
 
 ---
 
@@ -810,7 +826,7 @@ Lire les fichiers de documentation du projet :
 - **CODE_OF_CONDUCT** : fichier fixant les règles de comportement 
   -> définit un environnement convivial et accueillant, e.g. https://www.contributor-covenant.org/
 
-:thought_balloon: (option) CONTRIBUTING et CODE_OF_CONDUCT attestent d'une volonté
+:thought_balloon: **[Option]** CONTRIBUTING et CODE_OF_CONDUCT attestent d'une volonté
 
 ---
 
@@ -845,7 +861,8 @@ Ne pas trop réfléchir et éviter de se brider pour sa première contribution !
 
 # Comment trouver un projet auquel contribuer ?
 
-- https://github.com/explore/ ou https://goodfirstissue.dev
+- https://github.com/explore/ ou https://github.com/search/advanced
+- https://goodfirstissue.dev
 - https://github.com/despo/issuehub.io : language + issue label
 - https://up-for-grabs.net/ : projets avec tâches pour nouveaux contributeurs
 - https://ovio.org/how-it-works : projets/issues selon compétences/intérêts 
@@ -859,10 +876,10 @@ Ne pas trop réfléchir et éviter de se brider pour sa première contribution !
 # Comment trouver un projet auquel contribuer ?
 
 Une fois un projet sélectionné, vérifier qu'il est propice à de nouvelles contributions :
-- **répond-il à la définition d'open source** ? (e.g. il a une licence ?)
-- nombre de contributeurs, d'issues et de Pull/Merge requests (PRs/MRs) ?
-- **quel est le niveau d'activité du projet** ?
- :thought_balloon: date de dernier commit dans la branche principale ? fréquence de commit ? issues et PR/MR récentes ? temps de réponse aux issues et PR/MR ? discussions actives dans les issues et PRs/MRs ? ancienneté de la dernière issue fermée et PR/MR fusionnée ?
+- **Répond-il à la définition d'open source** ? (e.g. il a une licence ?)
+- Nombre de contributeurs, d'issues et de Pull/Merge requests (PRs/MRs) ?
+- **Quel est le niveau d'activité du projet** ?
+ :thought_balloon: Date de dernier commit dans la branche principale ? fréquence de commit ? issues et PR/MR récentes ? temps de réponse aux issues et PR/MR ? discussions actives dans les issues et PRs/MRs ? ancienneté de la dernière issue fermée et PR/MR fusionnée ?
 
 ---
 
@@ -871,13 +888,13 @@ Une fois un projet sélectionné, vérifier qu'il est propice à de nouvelles co
 
 - Le projet est-il accueillant ?
 
-  - réponses utiles dans les issues ?
+  - Réponses utiles dans les issues ?
 
-  - échanges amicaux dans les questions ? forums ? chats ?
+  - Echanges amicaux dans les questions ? forums ? chats ?
 
   - MRs / PRs sont revues ?
 
-  - remerciement pour contributions ?
+  - Remerciement pour contributions ?
 
 ---
 
@@ -927,7 +944,7 @@ Conseils pour communiquer dans les issues :
 
 Quand ?
 - de préférence **dès le début**: permet d'être observé et d'avoir des retours
-:thought_balloon: notez *WIP* dans le titre du commit pour signaler d'un travail en cours
+:thought_balloon: Notez *WIP* dans le titre du commit pour signaler d'un travail en cours
 
 ---
 
