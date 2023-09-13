@@ -25,7 +25,7 @@ java -classpath ./bin/ RPS
 ### Perspectives
 
 - Tableau de score:
-Il serait bien qu'au couss de la partie, ou à la fin de celle-ci, un tableau
+Il serait bien qu'au cours de la partie, ou à la fin de celle-ci, un tableau
 des scores soit affiché.
 
 - Fin de partie:
