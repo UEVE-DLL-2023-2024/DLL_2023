@@ -47,3 +47,5 @@ Lorsque vous décrivez un pull request, veillez à inclure les éléments suivan
 ## Révision des issues et pulls requests
 
 Tous les issues et pulls requests seront examinés par SMoraisDev. Assurez-vous de répondre rapidement aux commentaires ou aux demandes de modifications.
+
+**Remarque :**  Ce template est proposé à titre indicatif, mais il n'est pas parfait. Toute contribution visant à l'améliorer est la bienvenue ! Si vous avez des suggestions pour rendre ce guide plus complet ou plus efficace, n'hésitez pas à ouvrir un issue ou à soumettre un pull request pour apporter vos modifications.
