@@ -2,7 +2,7 @@ import java.util.Random;
 
 public class Bot extends Entity {
 	public Bot() {
-		super();
+		super("Bot");
 	}
 	// Fonction aidant le bot a choisir PIERRE, FEUILLE ou CISEAUX
 	@Override
