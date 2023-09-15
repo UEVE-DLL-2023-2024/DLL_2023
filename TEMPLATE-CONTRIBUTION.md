@@ -12,7 +12,7 @@ Avant de soumettre un nouveau problème (issue), assurez-vous de vérifier qu'il
 
 ## Décrire un Problème (Issue)
 
-Lorsque vous décrivez un problème, veillez à inclure les éléments suivants :
+Lorsque vous décrivez un problème, veuillez à inclure les éléments suivants :
 
 * Titre descriptif (utilisez des mots-clés tels que "bug", "erreur", "problème", "crash", etc. Vous pouvez utilisez des mots clés en Anglais).
 * Description détaillée du problème.
@@ -36,11 +36,11 @@ Avant de soumettre un pull request, assurez-vous d'avoir suivi ces étapes :
 
 ## Décrire un pull request
 
-Lorsque vous décrivez un pull request, veillez à inclure les éléments suivants :
+Lorsque vous décrivez un pull request, veuillez à inclure les éléments suivants :
 
 * Titre descriptif (utilisez des mots-clés tels que "fix", "feat", "update", "improvement", etc.).
 * Description détaillée des changements apportés.
-* Indiquez les problèmes associés (en utilisant Issue #NUMERO_ISSUE si cela s'applique).
+* Indiquez les issues associés (en utilisant Issue #NUMERO_ISSUE si cela s'applique).
 * Mettez en avant les changements clés ou les points à vérifier.
 * Ajoutez des captures d'écran (si nécessaire).
 
