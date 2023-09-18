@@ -1,4 +1,4 @@
-name: Proposition de fonctionnalité (Pull Request)
+name: Proposition de fonctionnalité (Feature/Pull Request)
 description: Suggérer une idée pour ce projet
 title: "Votre titre..."
 labels: ["pull request", "Feature"]
