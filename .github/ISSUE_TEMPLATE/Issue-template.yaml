@@ -29,7 +29,4 @@ body:
     id: terms
     attributes:
       label: Template de contribution
-      description: En soumettant cette issue, vous acceptez de suivre les règles du [Template de contribution](https://github.com/xunita/DLL_2023/blob/main/TEMPLATE-CONTRIBUTION.md)
-      options:
-        - label: J'accepte de suivre les règles du Template de contribution
-          required: true
+      description: Nous vous encourageons à suivre ce [Template de contribution](https://github.com/xunita/DLL_2023/blob/main/TEMPLATE-CONTRIBUTION.md) pour faciliter le processus de soumission d'Issues ou de Pull Requests (PR). 
