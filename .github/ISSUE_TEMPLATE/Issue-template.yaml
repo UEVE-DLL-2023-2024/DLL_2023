@@ -25,8 +25,7 @@ body:
       label: Les traces d'executions
       description: Veuillez copier et coller toute sortie du log pertinent. Celui-ci sera automatiquement formaté en code.
       render: shell
-  - type: checkboxes
-    id: terms
+  - type: markdown
     attributes:
-      label: Template de contribution
-      description: Nous vous encourageons à suivre ce [Template de contribution](https://github.com/xunita/DLL_2023/blob/main/TEMPLATE-CONTRIBUTION.md) pour faciliter le processus de soumission d'Issues ou de Pull Requests (PR). 
+      value: |
+        Nous vous encourageons à suivre ce [Template de contribution](https://github.com/xunita/DLL_2023/blob/main/TEMPLATE-CONTRIBUTION.md) pour faciliter le processus de soumission d'Issues ou de Pull Requests (PR).
