@@ -1,4 +1,4 @@
-name: Report de bug(Issue)
+name: Report de bug (Issue)
 description: Décrivez votre problème.
 title: "Votre titre..."
 labels: ["bug(issue)", "pull request"]
