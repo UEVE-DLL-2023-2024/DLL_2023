@@ -11,7 +11,7 @@ body:
       value: |
         Merci d'avoir pris le temps de rapporter ce bug!
   - type: textarea
-    id: Qu est ce qui s est passé ?
+    id: Qu-est-ce-qui-s-est-passé?
     attributes:
       label: Qu est ce qui s est passé ?
       description: Quel resultat expectiez vous?
