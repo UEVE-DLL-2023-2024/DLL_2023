@@ -1,6 +1,6 @@
 name: Report de bug(Issue)
 description: Décrivez le problème...
-title: "[Bug]: "
+title: "Votre titre..."
 labels: ["bug(issue)", "pull request"]
 projects: ["octo-org/1", "octo-org/44"]
 assignees:
@@ -11,9 +11,9 @@ body:
       value: |
         Merci d'avoir pris le temps de rapporter ce bug!
   - type: textarea
-    id: Qu'est ce qui s'est passé ?
+    id: Qu est ce qui s est passé ?
     attributes:
-      label: Qu'est ce qui s'est passé ?
+      label: Qu est ce qui s est passé ?
       description: Quel resultat expectiez vous?
       placeholder: Dites nous ce que vous voyez!
       value: "Un problème est survenu!"
@@ -22,7 +22,7 @@ body:
   - type: textarea
     id: logs
     attributes:
-      label: Les traces d'executions
+      label: Les traces d executions
       description: Veuillez copier et coller toute sortie du log pertinent. Celui-ci sera automatiquement formaté en code.
       render: shell
   - type: checkboxes
@@ -31,5 +31,5 @@ body:
       label: Template de contribution
       description: En soumettant cette issue, vous acceptez de suivre les règles du [Template de contribution](https://github.com/xunita/DLL_2023/blob/main/TEMPLATE-CONTRIBUTION.md)
       options:
-        - label: J'accepte de suivre les règles du Template de contribution
+        - label: J accepte de suivre les règles du Template de contribution
           required: true
