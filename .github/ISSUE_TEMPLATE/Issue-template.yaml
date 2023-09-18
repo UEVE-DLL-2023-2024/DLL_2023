@@ -1,5 +1,5 @@
 name: Report de bug(Issue)
-description: Décrivez le problème...
+description: Décrivez votre problème.
 title: "Votre titre..."
 labels: ["bug(issue)", "pull request"]
 projects: ["octo-org/1", "octo-org/44"]
