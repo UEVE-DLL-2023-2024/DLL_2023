@@ -7,3 +7,4 @@
 ## Contributors
 
 - Geoffray Gaborit, Jofresh, gaborit.geoffray@gmail.com
+- Kévin Bockstael, allinchico, kevin.bockstael@hotmail.com
