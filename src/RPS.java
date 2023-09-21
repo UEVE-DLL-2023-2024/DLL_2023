@@ -2,6 +2,7 @@ public class RPS {
 	private Player player;
 	private Bot bot;
 	private Scoreboard scoreboard;
+	private int compteur;
 
 	public RPS() {
 		player = new Player();
@@ -12,6 +13,7 @@ public class RPS {
 	public static void main(String[] args) {
 		RPS rps = new RPS();
 		rps.getPlayerName();
+		rps.getNumberOfRound();
 		rps.startGame();
 	}
 
@@ -30,6 +32,7 @@ public class RPS {
 		case 1: 
 			player.incrementScore();
 			System.out.println(player.getName()+ " remporte la manche !");
+			compteur++;
 			break;
 		case -1: 
 			bot.incrementScore();
@@ -40,15 +43,28 @@ public class RPS {
 		scoreboard.displayScore();
 
 		// Demande a l'utilisateur s'il veut jouer a nouveau
-		if (player.playAgain()) {
-			System.out.println();
+		int nbRound = player.getNbOfRound();
+		if (compteur == nbRound){
+			System.out.println("Fin du jeu");
+			compteur = 0;
+			if (player.playAgain()) {
+				System.out.println();
+				getNumberOfRound();
+				startGame();
+			} else {
+				System.out.println("Fin du jeu !");
+			}
+		 } else { 
 			startGame();
-		} else {
-			System.out.println("Fin du jeu !");
 		}
 	}
+
 	// Fonction utilisee pour demander le nom du joueur
 	public void getPlayerName() {
 		player.askName();
+	}
+	
+	public void getNumberOfRound(){
+		player.askNumberOfRound();
 	}
 }
