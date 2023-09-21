@@ -1,10 +1,12 @@
 public class RPS {
 	private Player player;
 	private Bot bot;
+	private Scoreboard scoreboard;
 
 	public RPS() {
 		player = new Player();
 		bot = new Bot();
+		scoreboard = new Scoreboard(player, bot);
 	}
 
 	public static void main(String[] args) {
@@ -26,12 +28,17 @@ public class RPS {
 			System.out.println("Egalite !");
 			break;
 		case 1: 
+			player.incrementScore();
 			System.out.println(player.getName()+ " remporte la manche !");
 			break;
 		case -1: 
+			bot.incrementScore();
 			System.out.println("Bot remporte la manche !");
 			break;
 		}
+
+		scoreboard.displayScore();
+
 		// Demande a l'utilisateur s'il veut jouer a nouveau
 		if (player.playAgain()) {
 			System.out.println();

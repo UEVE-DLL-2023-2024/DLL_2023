@@ -6,3 +6,4 @@
 
 ## Contributors
 
+- Geoffray Gaborit, Jofresh, gaborit.geoffray@gmail.com

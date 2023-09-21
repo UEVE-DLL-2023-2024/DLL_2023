@@ -1,25 +1,20 @@
 import java.util.Scanner;
 
-public class Player {
-
-	private String name;
+public class Player extends Entity {
 	// Variable utilisee pour recupere les entrees du clavier
 	Scanner sc = new Scanner(System.in);
 
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
+	public Player() {
+		super();
 	}
 
 	public void askName() {
 		System.out.println("Quel est votre nom ?");
-		name = sc.next();
+		setName(sc.next());
 	}
 
 	// Function dealing with player sign selection 
+	@Override
 	public int selectSign() {
 		System.out.println("Choisissez  PIERRE FEUILLE CISEAUX");
 
