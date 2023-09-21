@@ -1,6 +1,9 @@
 import java.util.Scanner;
 
 public class Player extends Entity {
+
+	private String name;
+	private int nbOfRound;
 	// Variable utilisee pour recupere les entrees du clavier
 	Scanner sc = new Scanner(System.in);
 
@@ -11,6 +14,24 @@ public class Player extends Entity {
 	public void askName() {
 		System.out.println("Quel est votre nom ?");
 		setName(sc.next());
+	}
+
+	public void askNumberOfRound(){
+		System.out.println("Combien de manche(s) pour gagner ?");
+		while (true) {
+			String input = sc.next();
+			try {
+				nbOfRound = Integer.parseInt(input);
+				break;
+			} catch (Exception e) {
+				System.out.println("Veuillez saisir une valeur numérique");
+				continue;
+			}
+		}
+	}
+
+	public int getNbOfRound() {
+		return nbOfRound;
 	}
 
 	// Function dealing with player sign selection 
