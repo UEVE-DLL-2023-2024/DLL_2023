@@ -94,11 +94,11 @@ Le mainteneur d'origine peut (peut-être) s'engager à nouveau
 **Exemple**: https://github.com/rsmpi/rsmpi/issues/109
 
 Si vous arrivez à le contacter, il pourra :
-- vous donner accès au dépôt, traqueur de bogues, site web d'origine, ... 
-- vous expliquer la raison de l'arrêt du développement du projet :
+- Vous donner accès au dépôt, traqueur de bogues, site web d'origine, ...
+- Vous expliquer la raison de l'arrêt du développement du projet :
 :thought_balloon: Problème personnel ? lié à la communauté ? obstacle non surmonté ?
 :warning: Si la raison est un obstacle, cela doit être votre priorité pour poursuivre le développement du projet !
-- vous détailler l'endroit où il s'est arrêté et les options déjà explorées
+- Vous détailler l'endroit où il s'est arrêté et les options déjà explorées
 
 ---
 
@@ -144,11 +144,10 @@ Prenez les développements en main vous-mêmes
 Communiquez sur les mises à jours et les progrès réalisés
 
 **Pourquoi** ?
-- personne ne trouverait cela sérieux !
-- personne ne voudrait rejoindre un projet où le développeur principale ne prend pas le temps de poster des mises à jours !
+- Personne ne trouverait cela sérieux !
+- Personne ne voudrait rejoindre un projet où le développeur principale ne prend pas le temps de poster des mises à jours !
 
-=> Prenez l'initiative, n'attendez pas que d'autres fasses le travail à votre place !
-=> Ces simples actions vous permettront de trouver plus facilement des développeurs prêts à vous aider !
+:thought_balloon: Prenez l'initiative, n'attendez pas que d'autres fasses le travail à votre place ! Ces simples actions vous permettront de trouver plus facilement des développeurs prêts à vous aider !
 
 ---
 
@@ -258,7 +257,7 @@ Tâche souvent perçu comme laborieuse par les développeurs car :
 # Exprimer votre objectif au monde
 
 Mais il est **nécessaire** d'investir suffisamment de temps dans la présentation
--> permet aux nouveaux venus de passer l’obstacle initial de la méconnaissance !
+:thought_balloon: Permet aux nouveaux venus de passer l’obstacle initial de la méconnaissance 
 
 **Objectif** : minimiser la différence entre :
 – la quantité d'énergie investie;
@@ -269,15 +268,17 @@ Plus la différence est faible, mieux c'est !
 
 ---
 
-# Prochains points abordés dans cette section
 </br>
 
-## Aspects important du démarrage d'un projet open source
+Nous allons maintenant voir des Aspects important du démarrage d'un projet open source
+
 </br>
 
-## Présentés dans un ordre proche duquel un nouvel utilisateur pourrait les rencontrer
+:thought_balloon: Présentés dans un ordre proche duquel un nouvel utilisateur pourrait les rencontre
 
-:thought_balloon: l'ordre dans lequel vous traitez ces points ne doit pas nécessairement suivre celui présenté. L'important est de couvrir chacun des points que nous allons voir ou alors vous devez accepter les conséquences associées !
+</br>
+
+:thought_balloon: L'ordre dans lequel vous traitez ces points ne doit pas nécessairement suivre celui présenté. L'important est de couvrir chacun des points que nous allons voir ou alors vous devez accepter les conséquences associées !
 
 ---
 
@@ -311,8 +312,7 @@ Un bon exemple de description est le projet Git (https://git-scm.com/):
 
 ---
 
-# Déclarer que le projet est libre ou 
-open source
+# Déclarer que le projet est libre ou  open source
 
 Les lecteurs intéressés voudront avoir plus de détails, mais avant tout, être sûre que le projet est libre ou open source !
 :thought_balloon: Indiquez dès le début que le projet est libre ou open source
@@ -362,7 +362,7 @@ Pour répondre à ces questions on peut avoir :
     - un historique des dernières releases;
     - l'activité autours de la résolution de bogues / issues.
 
-:thought_balloon: les indicateurs servent de passerelle à plus d'informations !
+:thought_balloon: Les indicateurs servent de passerelle à plus d'informations !
 
 :warning: Ne pas céder à la tentation d’exagérer ou de gonfler l'état du développement
 :warning:Ne pas avoir peur de ne pas être *" prêt"* / qu’il faille *"essuyer les plâtres"*
@@ -544,12 +544,12 @@ Besoin d'utiliser un format standard et facile à éditer, e.g. texte brut, rst,
 **Objectif** : incorporer facilement et rapidement les retours des lecteurs
 
 Une bonne documentation doit au minimum valider les critères suivants:
-- préciser le niveau d'expertise que doit avoir le lecteur
-- décrire clairement et en détail comment configurer le logiciel
-- expliquer comment lancer les tests pour valider la configuration
-- donner des exemples (style tutoriels) pour réaliser quelques actions
-- préciser les endroits où la doc est encore incomplète
-- (extra) préciser les lacunes connues de l'outil
+- préciser le niveau d'expertise que doit avoir le lecteur;
+- décrire clairement et en détail comment configurer le logiciel;
+- expliquer comment lancer les tests pour valider la configuration;
+- donner des exemples (style tutoriels) pour réaliser quelques actions;
+- préciser les endroits où la doc est encore incomplète;
+- (extra) préciser les lacunes connues de l'outil.
 
 Doit être **disponible en ligne** et dans la **distribution** téléchargeable du logiciel 
 
