@@ -22,13 +22,16 @@ public class Player extends Entity {
 			String input = sc.next();
 			try {
 				nbOfRound = Integer.parseInt(input);
+				if (nbOfRound <= 0) {
+					throw new Exception();
+				}
 				break;
 			} catch (Exception e) {
-				System.out.println("Veuillez saisir une valeur numérique");
+				System.out.println("Veuillez saisir une valeur numérique supérieure à zéro.");
 				continue;
+				}	
 			}
 		}
-	}
 
 	public int getNbOfRound() {
 		return nbOfRound;
