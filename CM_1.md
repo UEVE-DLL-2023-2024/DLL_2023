@@ -752,7 +752,7 @@ Idée fausse la plus répandue : contribuer au libre / à l'open source signifie
 
 # Qu'est ce que veut dire contribuer au libre / open source ?
 
-Vous aimez coder ?
+- Vous aimez coder ?
   
   - résoudre une issue ouverte;
   
@@ -768,11 +768,11 @@ Vous aimez coder ?
 
 # Qu'est ce que veut dire contribuer au libre / open source ?
 
-Vous aimez planifier des événements ?
+- Vous aimez planifier des événements ?
   - organiser des ateliers / rencontres autours du projet
   - plannifier une conférence sur le projet (si elle existe)
 
-Vous aimez aider les gens ?
+- Vous aimez aider les gens ?
   - répondre aux questions sur le projet, e.g. sur StackOverflow, Reddit, ...
   - répondre à des questions ouvertes dans les issues
   - proposer d'être le mentor de quelqu'un
@@ -820,11 +820,11 @@ Structure organisationnelle classique :
 Lire les fichiers de documentation du projet :
 - **LICENCE** : fichier définissant la licence du projet
 - **README** : fichier de bienvenue
-  -> explique pourquoi le projet est utile et comment faire ses premiers pas
+  :thought_balloon: Explique pourquoi le projet est utile et comment faire ses premiers pas
 - **CONTRIBUTING** : similaire au README mais orienté développeur
-  -> décrit la manière de contribuer et les contributions nécessaires
+  :thought_balloon: Décrit la manière de contribuer et les contributions nécessaires
 - **CODE_OF_CONDUCT** : fichier fixant les règles de comportement 
-  -> définit un environnement convivial et accueillant, e.g. https://www.contributor-covenant.org/
+  :thought_balloon: Définit un environnement convivial et accueillant, e.g. https://www.contributor-covenant.org/
 
 :thought_balloon: **[Option]** CONTRIBUTING et CODE_OF_CONDUCT attestent d'une volonté
 
@@ -840,7 +840,7 @@ Autres endroits pour *"tâter l'ambiance"* :
 
 - **forums ou listes de diffusions** : discussions plus générales autours du projet;
 
-- **canaux de discussions en temps réel** : discussions  informelles, collaborations et échanges rapides;
+- **canaux de discussions en temps réel** : discussions  informelles, collaborations et échanges rapides.
 
 ---
 
