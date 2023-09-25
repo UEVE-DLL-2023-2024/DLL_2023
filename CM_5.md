@@ -1331,7 +1331,7 @@ Comment est introduit une version de sécurité dans le flot des versions prévu
 
 ---
 
-# Développement quotidien
+# Développement quotidien
 
 Maintenir des versions en parallèle nécessite une **certaine discipline**
 
@@ -1340,7 +1340,7 @@ Voyez vous ce que cela induit ?
 - Ne pas mélanger des changements sans rapport dans un même commit
 
 :thought_balloon: Si un changement est trop important :
-- partitionnez le en N commits bien délimités
+- partitionner le changement en N commits bien délimités
 - chaque commit ne doit pas inclure quelque chose sans rapport avec le changement global
 
 Exemple de commit mal pensé au prochain slide
@@ -1457,3 +1457,18 @@ Il est possible de minimiser la fréquence et le degrés de friction de tels con
 
 :warning: Crée aussi un biais d’inertie contre l’élargissement du périmètre d’une version : si le périmètre est bien défini, il y a alors besoin de justifier l’extension de périmètre (même si la date n’a pas été fixée!)
 
+---
+
+# Planification des versions
+
+**Stratégie alternative** : laisser l’entreprise réaliser des versions intermédiaires séparées pour ses clients
+
+- :white_check_mark: Versions publiques et open sources
+
+- :white_check_mark: Pas de dégât au projet tant que les versions intermédiaires sont distinguées des versions officielles !
+
+- :x: Le maintient de telles lignes de versions est coûteux !
+:warning: Besoin de suivis de modification et de transfert dans les
+deux sens !
+
+:thought_balloon: Technique qui ne fonctionne que si l’entreprise a les ressources nécessaires pour dédier des personnes à la gestion des versions séparées !
