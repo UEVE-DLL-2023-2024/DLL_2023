@@ -46,7 +46,7 @@ public class Player extends Entity {
 	// Function dealing with player sign selection 
 	@Override
 	public int selectSign() {
-		System.out.println("Choisissez  PIERRE FEUILLE CISEAUX");
+		System.out.println("Choisissez  PIERRE FEUILLE CISEAUX LEZARD SPOCK");
 
 		String input = sc.next();
 		input = input.toUpperCase();
@@ -58,6 +58,10 @@ public class Player extends Entity {
 			return Controller.FEUILLE;
 		else if (c == 'C')
 			return Controller.CISEAUX;
+		else if (c == 'L')
+			return Controller.LEZARD;
+		else if (c == 'S')
+			return Controller.SPOCK;
 		else {
 			selectSign();
 			return 0;
