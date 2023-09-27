@@ -1,8 +1,11 @@
+import java.util.Scanner;
+
 public class RPS {
 	private Player player;
 	private Bot bot;
 	private Scoreboard scoreboard;
-	
+	static Scanner sc = new Scanner(System.in);
+
 	public RPS() {
 		player = new Player();
 		bot = new Bot();
@@ -13,14 +16,15 @@ public class RPS {
 		RPS rps = new RPS();
 		rps.getPlayerName();
 		rps.getNumberOfRound();
-		rps.startGame();
+		char gameModeRPS = rps.getGameMode();
+		rps.startGame(gameModeRPS);
 	}
 
 	// Fonction appelee recursivement tant que le joueur souhaite jouer
-	public void startGame() {
-		int playerSign = player.selectSign();
+	public void startGame(char gameModeRPS) {
+		int playerSign = player.selectSign(gameModeRPS);
 		Controller.display(player.getName(), playerSign);
-		int botSign = bot.selectSign();
+		int botSign = bot.selectSign(gameModeRPS);
 		Controller.display("bot", botSign);
 
 		int result = Controller.compareSigns(playerSign, botSign);
@@ -51,13 +55,13 @@ public class RPS {
 			if (player.playAgain()) {
 				System.out.println();
 				getNumberOfRound();
-				startGame();
+				startGame(gameModeRPS);
 			} else {
 				System.out.println("Fin du jeu !");
 			}
 		 }
 		 else { 
-			startGame();
+			startGame(gameModeRPS);
 		}
 	}
 
@@ -68,5 +72,15 @@ public class RPS {
 	
 	public void getNumberOfRound(){
 		player.askNumberOfRound();
+	}
+
+	public char getGameMode(){
+		System.out.println("Selectionnez votre mode de jeu : CLASSIQUE ou BBT");
+		String gameMode = sc.next();
+		char c = gameMode.charAt(0);
+		if(c != 'C' && c != 'B'){
+			getGameMode();
+		}	
+		return c;
 	}
 }
