@@ -8,3 +8,4 @@
 
 - Geoffray Gaborit, Jofresh, gaborit.geoffray@gmail.com
 - Kévin Bockstael, allinchico, kevin.bockstael@hotmail.com
+- SIBY Souleymane, Souleymane9, Souleymane690@hotmail.fr
