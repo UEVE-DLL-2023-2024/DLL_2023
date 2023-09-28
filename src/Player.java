@@ -13,7 +13,13 @@ public class Player extends Entity {
 
 	public void askName() {
 		System.out.println("Quel est votre nom ?");
-		setName(sc.next());
+		String inputName = sc.next();
+
+		while (inputName.length() > 20) {
+            System.out.println("Le nom ne doit pas depasser 20 caracteres. Reessayez : ");
+            inputName = sc.next();
+        }
+		setName(inputName);
 	}
 
 	public void askNumberOfRound(){
