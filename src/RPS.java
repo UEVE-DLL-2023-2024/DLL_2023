@@ -7,7 +7,7 @@ public class RPS {
 	private Scoreboard scoreboard;
 
 	private int mode;
-	
+
 	public RPS() {
 		player1 = new Player();
 		player2 = new Player();
@@ -47,18 +47,19 @@ public class RPS {
 	// Fonction appelee recursivement tant que les joueurs souhaitent jouer
 	public void startGame() {
 		int player1Sign = player1.selectSign();
-		Controller.display(player1.getName(), player1Sign);
+
 		if (mode == 2) {
 			scoreboard.displayScore();
 
-			// Demande a l'utilisateur s'il veut jouer a nouveau
 			int nbRound = player1.getNbOfRound();
 			int playerCount = player1.getScore();
 			int botCount = bot.getScore();
+
 			if (playerCount == nbRound || botCount == nbRound){
 				System.out.println("Fin du jeu");
 				player1.resetScore();
 				bot.resetScore();
+
 				if (player1.playAgain()) {
 					System.out.println();
 					getNumberOfRound();
@@ -66,19 +67,23 @@ public class RPS {
 				} else {
 					System.out.println("Fin du jeu !");
 				}
-			 }
-			 else {
-				 startGame();
+			} else {
+				// Le joueur 2 (bot) fait son choix en privé.
+				int botSign = bot.selectSign();
+				int result = Controller.compareSigns(player1Sign, botSign);
+				displayResult(result, player1.getName(), "Bot");
+
+				// Continuez le jeu.
+				startGame();
 			}
 		} else if (mode == 1) {
 			if (player2.getName() != null) {
 				int player2Sign = player2.selectSign();
-				Controller.display(player2.getName(), player2Sign);
 				int result = Controller.compareSigns(player1Sign, player2Sign);
 				displayResult(result, player1.getName(), player2.getName());
 			} else {
+				// Le joueur 2 (bot) fait son choix en privé.
 				int botSign = bot.selectSign();
-				Controller.display("Bot", botSign);
 				int result = Controller.compareSigns(player1Sign, botSign);
 				displayResult(result, player1.getName(), "Bot");
 			}
@@ -91,9 +96,10 @@ public class RPS {
 		}
 	}
 
+
 	// Fonction utilisee pour demander le nom du joueur
 	public void getPlayerName() {
-		 player1.askName();
+		player1.askName();
 	}
 
 	// Fonction pour afficher le résultat
@@ -110,7 +116,7 @@ public class RPS {
 				break;
 		}
 	}
-	
+
 	public void getNumberOfRound(){
 		player1.askNumberOfRound();
 	}
