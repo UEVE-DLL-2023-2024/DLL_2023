@@ -7,11 +7,16 @@ public class Player extends Entity {
 	public Player() {
 		super();
 	}
+	public Player(String name){ super();}
 
 	public void askName() {
 		System.out.println("Quel est votre nom ?");
 		setName(sc.next());
+		this.setBestWinstreak(LocalStorage.getBestWinStreak(this.getName()));
+		this.setScore(LocalStorage.getScore(this.getName()));
 	}
+
+
 
 	// Function dealing with player sign selection 
 	@Override
