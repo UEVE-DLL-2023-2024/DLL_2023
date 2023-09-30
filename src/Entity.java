@@ -28,6 +28,10 @@ public abstract class Entity {
     return this.score;
   }
 
+  public void resetScore(){
+    this.score = 0;
+  }
+
   public void incrementScore() {
     this.score++;
   }
