@@ -14,8 +14,7 @@ public class Player extends Entity {
 
 	public void askName() {
 		System.out.println("Quel est votre nom ?");
-		this.setBestWinstreak(LocalStorage.getBestWinStreak(this.getName()));
-		this.setScore(LocalStorage.getScore(this.getName()));
+
 		String inputName = sc.next();
 
 		while (inputName.length() > 20) {
@@ -23,6 +22,8 @@ public class Player extends Entity {
             inputName = sc.next();
         }
 		setName(inputName);
+		this.setBestWinstreak(LocalStorage.getBestWinStreak(this.getName()));
+		this.setScore(LocalStorage.getScore(this.getName()));
 	}
 
 	public void askNumberOfRound(){

@@ -61,5 +61,9 @@ public abstract class Entity {
 
   public void incrementActualWinStreak() {
     this.actualWinStreak++;
+    // Met à jour la meilleure série de victoires si nécessaire
+    if(this.actualWinStreak > this.bestWinStreak){
+      this.bestWinStreak = this.actualWinStreak;
+    }
   }
 }
