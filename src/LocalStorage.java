@@ -35,12 +35,15 @@ public class LocalStorage {
     // Méthode pour récupérer la dernière winstreak
     public static int getScore(String playerName) {
         String fileName = getFileName(playerName);
+        if(new File(fileName).exists()){
         try (BufferedReader reader = new BufferedReader(new FileReader(fileName))) {
 
             return Integer.parseInt(reader.readLine());
         } catch (IOException e) {
-            return 0; // Si le fichier n'existe pas ou s'il y a une erreur, on renvoie 0
+            return 0;
         }
+    }
+        return 0;
     }
 
     // Méthode pour récupérer la meilleure win streak
@@ -68,29 +71,50 @@ public class LocalStorage {
         List<String> lines = new ArrayList<>();
 
         //  Lire le contenu du fichier pour garder en tête la plus grosse winstreak
-        try (BufferedReader reader = new BufferedReader(new FileReader(fileName))) {
-            String line;
-            while ((line = reader.readLine()) != null) {
-                lines.add(line);
+        if(new File(fileName).exists()){
+            try (BufferedReader reader = new BufferedReader(new FileReader(fileName))) {
+                String line;
+                while ((line = reader.readLine()) != null) {
+                    lines.add(line);
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
             }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
 
-        // reset les 2 premieres lignes
-        if (lines.size() >= 2) {
-            lines.set(0, "0");
-            lines.set(1, "0");
-        }
-
-        // Écrire à nouveau les nouvelles infos dans le fichier
-        try (PrintWriter writer = new PrintWriter(new FileWriter(fileName))) {
-            for (String line : lines) {
-                writer.println(line);
+            // reset les 2 premieres lignes
+            if (lines.size() >= 2) {
+                lines.set(0, "0");
+                lines.set(1, "0");
             }
-        } catch (IOException e) {
-            e.printStackTrace();
+
+            // Écrire à nouveau les nouvelles infos dans le fichier
+            try (PrintWriter writer = new PrintWriter(new FileWriter(fileName))) {
+                for (String line : lines) {
+                    writer.println(line);
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
+    }
+
+    public static List<List<String>> getAllScoreboard() {
+        File folder = new File("./save");
+        File[] listOfFiles = folder.listFiles();
+        List<List<String>> playerScoreboard = new ArrayList<>();
+
+        if (listOfFiles != null) {  // Ajout d'une vérification null pour éviter une NullPointerException
+            for (File file : listOfFiles) {
+                if (file.isFile()) {
+                    List<String> playerInfo = new ArrayList<>();
+                    String fileName = file.getName();
+                    String playerName = fileName.substring(0, fileName.length() - 9);
+                    playerInfo.add(playerName + " " + getScore(playerName) + " - " + getBotScore(playerName) + " Bot, " + "Meilleure serie de victoire : " + getBestWinStreak(playerName));
+                    playerScoreboard.add(playerInfo);  // Ajoute la liste playerInfo à playerScoreboard
+                }
+            }
+        }
+        return playerScoreboard;
     }
 
 

@@ -1,7 +1,12 @@
+import java.util.List;
+import java.util.Scanner;
+
 public class RPS {
 	private Player player;
 	private Bot bot;
 	private Scoreboard scoreboard;
+	Scanner sc = new Scanner(System.in);
+
 
 	public RPS() {
 		player = new Player();
@@ -12,7 +17,105 @@ public class RPS {
 	public static void main(String[] args) {
 		RPS rps = new RPS();
 		rps.getPlayerName();
-		rps.startGame();
+		rps.startMenu();
+	}
+	public void startMenu(){
+		System.out.println("Bienvenue "+player.getName()+" dans le jeu du Pierre Feuille Ciseaux !");
+		System.out.println("1 - Jouer");
+		System.out.println("2 - Voir votre scoreboard");
+		System.out.println("3 - Voir tous les scoreboards");
+		System.out.println("4 - Quitter");
+		String input;
+		while(true){
+			input = sc.next();
+
+			switch (input) {
+				case "1":
+					startGame();
+					break;
+				case "2":
+					startScoreboard();
+					break;
+				case "3":
+					startAllScoreboard();
+
+					break;
+				case "4":
+					System.out.println("Fin du jeu !");
+					System.exit(0);
+					break;
+				default:
+					System.out.println("Veuillez saisir une valeur valide.");
+					System.out.println("1 - Jouer");
+					System.out.println("2 - Voir votre scoreboard");
+					System.out.println("3 - Voir tous les scoreboards");
+					System.out.println("4 - Quitter");
+					break;
+			}
+		}
+	}
+	public void startScoreboard(){
+		scoreboard.displayScore();
+		System.out.println("1 - Revenir au menu");
+		System.out.println("2 - Réinitialiser votre score (sauf la meilleure serie de victoire)");
+		System.out.println("3 - Quitter");
+		String input;
+		while(true){
+			input = sc.next();
+
+			switch (input) {
+				case "1":
+					startMenu();
+					break;
+				case "2":
+					player.resetScore();
+					bot.resetScore();
+					System.out.println("Score réinitialisé !");
+					startMenu();
+					break;
+				case "3":
+					System.out.println("Fin du jeu !");
+					System.exit(0);
+
+					break;
+				default:
+					System.out.println("1 - Revenir au menu");
+					System.out.println("2 - Réinitialiser votre score (sauf la meilleure serie de victoire)");
+					System.out.println("3 - Quitter");
+					break;
+			}
+		}
+	}
+	public void startAllScoreboard(){
+		List<List<String>> scoreboardList = LocalStorage.getAllScoreboard();
+		for (List<String> Listscoreboard : scoreboardList) {
+			for(String scoreboard : Listscoreboard){
+				System.out.println(scoreboard);
+			}
+		}
+		System.out.println("1 - Revenir au menu");
+		System.out.println("2 - Quitter");
+		String input;
+		while(true){
+			input = sc.next();
+
+			switch (input) {
+				case "1":
+					startMenu();
+					break;
+
+				case "3":
+					System.out.println("Fin du jeu !");
+					System.exit(0);
+
+					break;
+				default:
+					System.out.println("1 - Revenir au menu");
+					System.out.println("2 - Réinitialiser votre score (sauf la meilleure serie de victoire)");
+					System.out.println("3 - Quitter");
+					break;
+			}
+		}
 	}
 
 	// Fonction appelee recursivement tant que le joueur souhaite jouer

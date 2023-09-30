@@ -17,4 +17,5 @@ public class Scoreboard {
     System.out.println("Meilleure serie de victoires : " + player.getBestWinStreak());
 
   }
+
 }

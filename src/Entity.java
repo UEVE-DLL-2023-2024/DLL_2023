@@ -29,6 +29,7 @@ public abstract class Entity {
   }
 
   public void resetScore(){
+    LocalStorage.resetScores(this.name);
     this.score = 0;
   }
 
