@@ -14,7 +14,6 @@ public class Player extends Entity {
 
 	public void askName() {
 		System.out.println("Quel est votre nom ?");
-
 		String inputName = sc.nextLine();
 
 		while (inputName.length() > 20) {
