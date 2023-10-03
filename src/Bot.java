@@ -8,7 +8,7 @@ public class Bot extends Entity {
 	@Override
 	public int selectSign() {
 		Random random = new Random();
-		int sign = random.nextInt(3) + 1;
-		return sign;
+		return random.nextInt(3) + 1;
 	}
+
 }

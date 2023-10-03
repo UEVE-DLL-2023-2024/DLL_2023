@@ -10,6 +10,7 @@ public class Player extends Entity {
 	public Player() {
 		super();
 	}
+	public Player(String name){ super();}
 
 	public void askName() {
 		System.out.println("Quel est votre nom ?");
@@ -20,6 +21,8 @@ public class Player extends Entity {
             inputName = sc.nextLine();
         }
 		setName(inputName);
+		this.setBestWinstreak(LocalStorage.getBestWinStreak(this.getName()));
+		this.setScore(LocalStorage.getScore(this.getName()));
 	}
 
 	public void askNumberOfRound(){
@@ -42,6 +45,8 @@ public class Player extends Entity {
 	public int getNbOfRound() {
 		return nbOfRound;
 	}
+
+
 
 	// Function dealing with player sign selection 
 	@Override
