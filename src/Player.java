@@ -1,3 +1,4 @@
+import java.util.ResourceBundle;
 import java.util.Scanner;
 
 public class Player extends Entity {
@@ -7,23 +8,30 @@ public class Player extends Entity {
 	// Variable utilisee pour recupere les entrees du clavier
 	Scanner sc = new Scanner(System.in);
 
-	public Player() {
+	private ResourceBundle messages;
+
+	public Player(ResourceBundle messages) {
 		super();
+		this.messages = messages;
 	}
 
 	public void askName() {
-		System.out.println("Quel est votre nom ?");
+		System.out.println(messages.getString("name_question"));
 		String inputName = sc.nextLine();
 
 		while (inputName.length() > 20) {
-            System.out.println("Le nom ne doit pas depasser 20 caracteres. Reessayez : ");
+            System.out.println(messages.getString("name_error"));
             inputName = sc.nextLine();
         }
 		setName(inputName);
 	}
 
+	public int getNbOfRound() {
+		return nbOfRound;
+	}
+
 	public void askNumberOfRound(){
-		System.out.println("Combien de manche(s) pour gagner ?");
+		System.out.println(messages.getString("how_many_rounds"));
 		while (true) {
 			String input = sc.next();
 			try {
@@ -33,59 +41,43 @@ public class Player extends Entity {
 				}
 				break;
 			} catch (Exception e) {
-				System.out.println("Veuillez saisir une valeur numérique supérieure à zéro.");
+				System.out.println(messages.getString("rounds_number_error"));
 				continue;
-				}	
-			}
-		}
-
-	public int getNbOfRound() {
-		return nbOfRound;
-	}
-
-	public void askNumberOfRound(){
-		System.out.println("Combien de manche(s) pour gagner ?");
-		while (true) {
-			String input = sc.next();
-			try {
-				nbOfRound = Integer.parseInt(input);
-				if (nbOfRound <= 0) {
-					throw new Exception();
 				}
-				break;
-			} catch (Exception e) {
-				System.out.println("Veuillez saisir une valeur numérique supérieure à zéro.");
-				continue;
-				}	
 			}
 		}
 
-	public int getNbOfRound() {
-		return nbOfRound;
-	}
-
-	// Function dealing with player sign selection 
+	// Function dealing with player sign selection
 	@Override
 	public int selectSign(char gameModeRPS) {
+		String rock = messages.getString("rock");
+		String paper = messages.getString("paper");
+		String scissors = messages.getString("scissors");
+		String lizard = messages.getString("lizard");
+		String spock = messages.getString("spock");
+
+		String options = "";
+
 		if(gameModeRPS == 'B'){
-			System.out.println("Choisissez  PIERRE FEUILLE CISEAUX LEZARD SPOCK");
+			options = rock + " " + paper + " " + scissors + " " + lizard + " " + spock;
+		} else{
+			options = rock + " " + paper + " " + scissors;
 		}
-		else{
-			System.out.println("Choisissez  PIERRE FEUILLE CISEAUX");
-		}
+
+		System.out.println(messages.getString("chose") + " : " + options);
 		String input = sc.next();
 		input = input.toUpperCase();
 		char c = input.charAt(0);
-		// Verification du premier caractere de l'entree 
-		if (c == 'P')
+		// Verification du premier caractere de l'entree
+		if (c == rock.charAt(0))
 			return Controller.PIERRE;
-		else if (c == 'F')
+		else if (c == paper.charAt(0))
 			return Controller.FEUILLE;
-		else if (c == 'C')
+		else if (c == scissors.charAt(0))
 			return Controller.CISEAUX;
-		else if (c == 'L' && gameModeRPS == 'B')
+		else if (c == lizard.charAt(0) && gameModeRPS == 'B')
 			return Controller.LEZARD;
-		else if (c == 'S' && gameModeRPS == 'B')
+		else if (c == spock.charAt(0) && gameModeRPS == 'B')
 			return Controller.SPOCK;
 		else {
 			return selectSign(gameModeRPS);
@@ -99,13 +91,13 @@ public class Player extends Entity {
 		String playerInput= "";
 
 		while(val){
-			System.out.print("Voulez-vous jouer a nouveau ? (O/N)");
+			System.out.print(messages.getString("play_again"));
 			playerInput = sc.nextLine();
 			playerInput = playerInput.toUpperCase();
 			val = playerInput.charAt(0) != 'O' && playerInput.charAt(0) != 'N';
-		
+
 			if(val){
-				System.out.println("\n***** Veuillez entree (O/N) ******\n");
+				System.out.println("\n"+messages.getString("yes_or_no")+"\n");
 			}
 		}
 
