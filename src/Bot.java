@@ -6,9 +6,13 @@ public class Bot extends Entity {
 	}
 	// Fonction aidant le bot a choisir PIERRE, FEUILLE ou CISEAUX
 	@Override
-	public int selectSign() {
+	public int selectSign(char gameModeRPS) {
 		Random random = new Random();
-		int sign = random.nextInt(3) + 1;
-		return sign;
+		if(gameModeRPS == 'C'){
+			return random.nextInt(3) + 1;
+		}
+		else{
+			return random.nextInt(5) + 1;
+		}
 	}
 }

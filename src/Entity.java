@@ -31,5 +31,5 @@ public abstract class Entity {
     this.score++;
   }
 
-  abstract public int selectSign();
+  abstract public int selectSign(char gameModeRPS);
 }

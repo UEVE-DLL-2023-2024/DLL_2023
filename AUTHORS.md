@@ -10,3 +10,4 @@
 - Geoffray Gaborit, Jofresh, gaborit.geoffray@gmail.com
 - Kévin Bockstael, allinchico, kevin.bockstael@hotmail.com
 - Zacharya Bougdou, Zakatsuki, bougdou.zacharya@gmail.com
+- Mathéo DELENIN, Grunt471, matheo.delenin@gmail.com
