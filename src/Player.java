@@ -43,6 +43,27 @@ public class Player extends Entity {
 		return nbOfRound;
 	}
 
+	public void askNumberOfRound(){
+		System.out.println("Combien de manche(s) pour gagner ?");
+		while (true) {
+			String input = sc.next();
+			try {
+				nbOfRound = Integer.parseInt(input);
+				if (nbOfRound <= 0) {
+					throw new Exception();
+				}
+				break;
+			} catch (Exception e) {
+				System.out.println("Veuillez saisir une valeur numérique supérieure à zéro.");
+				continue;
+				}	
+			}
+		}
+
+	public int getNbOfRound() {
+		return nbOfRound;
+	}
+
 	// Function dealing with player sign selection 
 	@Override
 	public int selectSign(char gameModeRPS) {
@@ -74,9 +95,20 @@ public class Player extends Entity {
 	// Fonction demandant au joueur s'il souhaite rejouer
 	public boolean playAgain() {
 		sc = new Scanner(System.in);
-		System.out.print("Voulez-vous jouer a nouveau ? (O/N)");
-		String playerInput = sc.nextLine();
-		playerInput = playerInput.toUpperCase();
-		return playerInput.charAt(0) == 'O';
+		boolean val = true;
+		String playerInput= "";
+
+		while(val){
+			System.out.print("Voulez-vous jouer a nouveau ? (O/N)");
+			playerInput = sc.nextLine();
+			playerInput = playerInput.toUpperCase();
+			val = playerInput.charAt(0) != 'O' && playerInput.charAt(0) != 'N';
+		
+			if(val){
+				System.out.println("\n***** Veuillez entree (O/N) ******\n");
+			}
+		}
+
+		return playerInput.charAt(0) != 'N';
 	}
 }
