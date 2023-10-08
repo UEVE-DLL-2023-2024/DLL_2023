@@ -643,7 +643,7 @@ Connaissez-vous de telles licences ?
 
 Connaissez-vous de telles licences ?
 
-La licence **MIT et ses dérivées**:
+La licence **MIT (https://mit-license.org/) et ses dérivées**:
 - licences de logiciel permissives;
 - affirment un droit d'auteur nominal;
 - droit illimité d'utilisation, copie, modification, distribution, vente;

@@ -125,6 +125,18 @@ Liste d’outils standards à mettre en place pour gérer l'information:
 À votre avis, qu’est ce qu’un bon site web :
 
 - Du point de vue du projet ?
+
+
+- Du point de vue d’un visiteur ?
+
+---
+
+
+# Site web
+
+À votre avis, qu’est ce qu’un bon site web :
+
+- Du point de vue du projet ?
 Des pages dédiées à l’aide aux personnes souhaitant participer au projet
 
 - Du point de vue d’un visiteur ?
@@ -308,6 +320,12 @@ L’utilisation d’une liste de diffusion / d’un forum de discussion est-il n
 # Liste de diffusion / Forum de discussion
 
 Quelles fonctionnalités retrouve-t-on dans une liste de diffusion ou un forum moderne ?
+
+---
+
+# Liste de diffusion / Forum de discussion
+
+Quelles fonctionnalités retrouve-t-on dans une liste de diffusion ou un forum moderne ?
 - discussions liées entre elles via fils de discussions;
 - possibilité de souscrire à un fils de discussions;
 - recherche d'archive d'ancien messages;
@@ -339,7 +357,7 @@ Exemple de description :
 
 # Comment choisir le bon logiciel de management de forum?
 
-Example de fonctionnalités des logiciels de management de forums modernes :
+Exemple de fonctionnalités des logiciels de management de forums modernes :
 - **Accès via courrier & navigateur internet** : abonnement à un forum par courrier et le lecture via navigateur
 - **Capacité de modération** : vérification des messages pour éviter les courriers indésirables, retirer les adresses obsolètes (e.g. changement d'entreprise)
 - **Archivage** : messages stockés et accessible via le web
@@ -517,8 +535,7 @@ Mélange de technologies et pratiques pour suivre et contrôler les modification
 
 # Vocabulaire d'outil de gestion de version
 
-**Pull** : récupérer les modifications réalisées par d’autres
-développeurs dans votre copie du code
+**Pull** : récupérer les modifications réalisées par d’autres développeurs dans votre copie du code
 
 - Opération de routine : généralement, les développeurs mettent à jour leur code plusieurs fois par jour
 
@@ -689,8 +706,7 @@ publique
 
 - Modifications apportées à la branche principale, n'impactant pas les autres branches
 
-- La branche principale est usuellement appelée *master* ou
-plus récemment *main* (https://github.com/github/renaming)
+- La branche principale est usuellement appelée *master* ou plus récemment *main* (https://github.com/github/renaming)
 :thought_balloon: Les utilisateurs de SVN parlent de *tronc*
 
 - Facilite les développements expérimentaux
@@ -712,9 +728,7 @@ plus récemment *main* (https://github.com/github/renaming)
 - Fréquent entre une branche de développement et la branche principale
 :thought_balloon: Plus rarement entre des branches de développement
 
-- En plus de l’idée *active* d’ajouter les modifications d’une
-branche à l’autre, *merge* fait aussi référence à ce que fait le
-gestionnaire de versions sur les modifications non chevauchante
+- En plus de l’idée *active* d’ajouter les modifications d’une branche à l’autre, *merge* fait aussi référence à ce que fait le gestionnaire de versions sur les modifications non chevauchante
 
 - Modification automatique fusionnées
 
@@ -751,8 +765,7 @@ gestionnaire de versions sur les modifications non chevauchante
 
 - L’événement de *revert* est versionné par le gestionnaire
 
-- En général, action réalisée en passant par le gestionnaire des
-modifications (pas à la main)
+- En général, action réalisée en passant par le gestionnaire des modifications (pas à la main)
 
 ---
 
@@ -937,10 +950,9 @@ Qu’elle approche serait préférable ?
 
 - Simplifie le temps associé à l'administration des droits : un contributeur qui étend son périmètre de développement progressivement et dont on a pas besoin de mettre à jours les droits
 
-- Extension progressive et auto gérée : un contributeur qui étend son périmètre en commençant par poster des patchs avec demande de revue et qui sera invité à commit directement par la suite (gain
-supplémentaire au niveau des métadonnées author / commiter)
+- Extension progressive et auto gérée : un contributeur qui étend son périmètre en commençant par poster des patchs avec demande de revue et qui sera invité à commit directement par la suite (gain supplémentaire au niveau des métadonnées author / commiter)
 
-:warning: un commit devrait toujours être revue par ceux qui travaillent sur la partie du code concerné. Autrement, le soucis de l’autorisation d’un individu ne devrait pas être le point le plus inquiétant !
+:warning: Un commit devrait toujours être revue par ceux qui travaillent sur la partie du code concerné. Autrement, le soucis de l’autorisation d’un individu ne devrait pas être le point le plus inquiétant !
 
 ---
 
@@ -968,6 +980,7 @@ Forme commune de notification de commit : envoie de courrier à une liste de not
 **Utilisation de *"hooks"*** : tâches automatisées en réaction à certains événements
 Par exemple : notification par courriers, affichage dans un channel de discussion en temps réel, rebase automatique, ...
 Margebot : https://github.com/smarkets/marge-bot
+Dependabot : https://github.com/dependabot (pyaedt #3701)
 
 ---
 
@@ -1266,7 +1279,7 @@ Exemple : https://github.com/ansys/pyaedt/blob/main/.pre-commit-config.yaml
 
 # CI & Codecov
 
-:thought_balloon: Rappel du cours de TECHNOLOG de Master 1 ... 
+:thought_balloon: Rappel du cours de TECHNOLOG de Master 1 ... (https://github.com/errata-ai/vale-action, https://github.com/hadolint/hadolint-action)
 
 Exemple d'outil mettant à dispositions des informations sur la couverture du code dans votre flux de travail : **Codecov** (https://about.codecov.io/)
 
@@ -1275,3 +1288,15 @@ Exemple d'outil mettant à dispositions des informations sur la couverture du co
 - de bloquer certaines PR n'atteignant pas un seuil;
 - de séparez et catégorisez vos rapports de couverture en fonction des tests et des fonctionnalités de votre projet;
 - ....
+
+---
+
+# Extra (découverte)
+
+Pour info, je suis tombé sur cela récemment : 
+
+https://github.com/figify/gh-metrics
+
+Description rapide : une CLI pour calculer des métriques relatives aux PR / issues d'un projet Github.
+
+---
