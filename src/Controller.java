@@ -1,3 +1,5 @@
+import java.util.ResourceBundle;
+
 public class Controller {
 	public static final int PIERRE = 1;
 	public static final int FEUILLE = 2;
@@ -6,16 +8,17 @@ public class Controller {
 	public static final int SPOCK = 5;
 
 	// Fonction affichant le signe choisi
-	public static void display(String someone, int sign) {
+	public static void display(String someone, int sign, ResourceBundle messages) {
+		String type = "";
 		switch (sign) {
 		case Controller.PIERRE:
-			System.out.print(someone + " a choisi PIERRE, ");
+			type = messages.getString("rock");
 			break;
 		case Controller.FEUILLE:
-			System.out.print(someone + " a choisi FEUILLE, ");
+			type = messages.getString("paper");
 			break;
 		case Controller.CISEAUX:
-			System.out.print(someone + " a choisi CISEAUX, ");
+			type = messages.getString("scissors");
 			break;
 		case Controller.LEZARD:
 			System.out.print(someone + " a choisi LEZARD, ");
@@ -24,8 +27,9 @@ public class Controller {
 			System.out.print(someone + " a choisi SPOCK, ");
 			break;
 		default:
-			break;
+			return;
 		}
+		System.out.print(someone + " " + messages.getString("has_chose") + " " + type + ", ");
 	}
 
 	// Fonction decidant qui a gagne la manche

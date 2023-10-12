@@ -19,7 +19,11 @@ javac -d bin/ -sourcepath src/ -classpath src/Bot.java src/Controller.java src/P
 Puis le lance :
 
 ```
-java -classpath ./bin/ RPS
+# pour windows
+java -classpath "./bin/;res/" RPS
+
+# pour linux
+java -classpath "./bin/:res/" RPS
 ```
 
 ### Perspectives
