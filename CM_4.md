@@ -303,7 +303,7 @@ Terme un peu rude mais proche de la réalité : une autorité qui a le dernier m
 
 :thought_balloon: Laisser les débats s'arranger via discussion et expérimentation ! **Intervenir lorsqu'un consensus ne peut être atteint** pour clôturer le débat et aller de l'avant
 
-**Exemples**: Linus Torvalds (Noyau Linux), Guildo van Rossum (Python) BDFL (Benevolent dictator for life), Matz (Ruby), Bram Moolenaar (Vim), ...
+**Exemples**: Linus Torvalds (Noyau Linux), Guido van Rossum (Python) BDFL (Benevolent dictator for life), Matz (Ruby), Bram Moolenaar (Vim), ...
 
 ---
 
@@ -429,7 +429,7 @@ Comment sont gérés les processus de contribution et de décision dans une dict
 
 Comment sont gérés les processus de contribution et de décision dans une dictature bienveillante ?
 
-- Processus de contribution classique, i.e. n'importe qui peut contribuer au projet puisqu'il y a un myriade de tâches : donner du retour utilisateur; tester et reporter ou corriger des bogues;  traduire; écrire ou mettre à jour de la documentation, ...
+- Processus de contribution classique, i.e. n'importe qui peut contribuer au projet puisqu'il y a une myriade de tâches : donner du retour utilisateur; tester et reporter ou corriger des bogues;  traduire; écrire ou mettre à jour de la documentation, ...
 
 - Processus de décision classique, i.e. basé sur le consensus:
   - ne nécessite pas forcément un processus formel;
@@ -458,8 +458,22 @@ Une structure à plat : une fois le pouvoir de décision obtenu, l'autorité est
 
 Quelques exemples de méritoracratie:
 - Apache : extension de la communauté des développeurs lorsque le groupe d'administration estime une personne
+https://www.apache.org/foundation/how-it-works/#meritocracy
+
+
+---
+
+# Méritocratie
+
+</br>
+
 - Communauté Mozzila : autorité distribuée entre les bénévoles et employés de la communauté (dépend des capacités de contribution au projet)
+https://www.mozilla.org/en-US/about/governance/
+
+</br>
+
 - Debian : élection annuelle du leader et positions clefs au mérite
+https://debian-handbook.info/browse/hr-HR/stable/sect.debian-internals.html
 
 ---
 
@@ -496,8 +510,7 @@ Les nouveaux commiters sont nommés par d'autres commiters MAIS doivent être va
   - la procédure de vote est privée afin de laisser le comité de gestion s'exprimer librement sur un candidat et éviter de froisser la personne
   - le résultat est rendu publiquement par la suite, le candidat peut demander des explications
 
-:warning: Le statut de commiter est un privilège et pas un droit, il doit être gagné et peut être retiré par le commité de
-gestion !
+:warning: Le statut de commiter est un privilège et pas un droit, il doit être gagné et peut être retiré par le commité de gestion !
 
 ---
 
@@ -539,7 +552,7 @@ gestion !
 
 # Section processus de contribution et décision
 
--  - les membres du comité ont des voix contraignantes sur la prise de décision finale (déclarent le débat clôt, prennent une décision finale, ...).
+- - les membres du comité ont des voix contraignantes sur la prise de décision finale (déclarent le débat clôt, prennent une décision finale, ...).
 
 - Les discussions de gestion non sensible ont lieu sur la liste de diffusion des contributeurs au projet
 
@@ -672,7 +685,7 @@ Quand doit-on voter ?
 Quand doit-on voter ?
 
 C'est une des choses les plus difficile à déterminer à propos du vote !
-:thought_balloon: En dernier recours, si les autres optiosn ont échouées.
+:thought_balloon: En dernier recours, si les autres options ont échouées.
 
 Pourquoi éviter le vote si possible ?
 
@@ -689,7 +702,7 @@ Pourquoi éviter le vote si possible ?
 
 - le vote n'est pas un bon moyen de résoudre un débat !
 
-- let vote met fin à la discussion et donc à la réflexion créative
+- le vote met fin à la discussion et donc à la réflexion créative
 
 - le vote règle le débat par décompte != débat rationnel aboutissant à une solution globale
 
@@ -883,8 +896,7 @@ Comment sont élus les nouveaux commiter partiel ?
 
 # Commiter partiel
 
-Selon les projets, les points précédents peuvent variés mais les
-principes suivant s'appliquent à la plupart des projets :
+Selon les projets, les points précédents peuvent variés mais les principes suivant s'appliquent à la plupart des projets :
 
 - Un commiter devrait pouvoir voter sur des questions de son domaine
 
@@ -1148,7 +1160,7 @@ Le rôle du responsable de tickets est d'aider à **clarifier la base de donnée
 :thought_balloon: Le nombre de tickets suivis dans l'outil de gestion des bogues augmente proportionnellement au nombre d'utilisateurs
 => Augmentation *"sans fin"* du nombre de tickets ouverts
 
-Une des tâches les plus courantes du gestionnaire est de **gérer les *"mauvais"* tickets** :
+Une des tâches courante du gestionnaire est de **gérer les *"mauvais"* tickets** :
 - limiter le nombre de tickets incomplets ou mal écrits, e.g. des champs du formulaire ne sont pas correctement remplis
 - limiter le nombre de tickets doublons
 
