@@ -43,7 +43,7 @@ public class Player extends Entity {
         else if (c == 'N'){}
 
         else {
-            System.out.println("Valeur non valide, veuillez sairir O ou N");
+            System.out.println("Valeur non valide, veuillez saisir O ou N");
             askRules();
         }
 
