@@ -26,6 +26,30 @@ public class Player extends Entity {
 		setName(inputName);
 	}
 
+	public void askRules() {
+        sc = new Scanner(System.in);
+        System.out.println("Voulez-vous lire les rapports de puissances des signes ? (O/N)");
+        String playerInput = sc.nextLine();
+        playerInput = playerInput.toUpperCase();
+        char c = playerInput.charAt(0);
+
+        if (c == 'O'){
+            System.out.println("pierre > Lezard & ciseaux\r\n" + //
+                "papier > pierre & Spock\r\n" + //
+                "ciseaux > papier & Lezard\r\n" + //
+                "Lezard > Spock & papier\r\n" + //
+                "Spock > ciseaux & pierre\r\n");
+            }
+        else if (c == 'N'){}
+
+        else {
+            System.out.println("Valeur non valide, veuillez sairir O ou N");
+            askRules();
+        }
+
+    }
+
+
 	public int getNbOfRound() {
 		return nbOfRound;
 	}
