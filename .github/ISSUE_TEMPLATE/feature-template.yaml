@@ -1,0 +1,29 @@
+name: Proposition de fonctionnalité (Feature)
+description: Suggérer une idée pour ce projet
+title: "Votre titre..."
+labels: ["pull request", "Feature"]
+projects: ["octo-org/1", "octo-org/44"]
+assignees:
+- octocat
+body:
+- type: markdown
+  attributes:
+    value: |
+      Laissez votre créativité prendre le dessus!
+- type: textarea
+  id: feat
+  attributes:
+    label: Quelle est votre idée ?
+    description: Que souhaitez vous accomplir ?
+    placeholder: Racontez nous votre idée!
+  validations:
+    required: true
+- type: textarea
+  id: logs
+  attributes:
+    label: Aperçu de votre fonctionnalité
+    description: Ajoutez des captures d'écran (si nécessaire).
+- type: markdown
+  attributes:
+    value: |
+      Nous vous encourageons à suivre ce [Template de contribution](https://github.com/xunita/DLL_2023/blob/main/TEMPLATE-CONTRIBUTION.md) pour faciliter le processus de soumission d'Issues ou de Pull Requests (PR).

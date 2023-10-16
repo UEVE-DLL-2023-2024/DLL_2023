@@ -1,0 +1,31 @@
+name: Report de bug (Issue)
+description: Décrivez votre problème.
+title: "Votre titre..."
+labels: ["bug(issue)", "pull request"]
+projects: ["octo-org/1", "octo-org/44"]
+assignees:
+- octocat
+body:
+- type: markdown
+  attributes:
+    value: |
+      Merci d'avoir pris le temps de rapporter ce bug!
+- type: textarea
+  id: Qu-est-ce-qui-s-est-passe
+  attributes:
+    label: Qu'est ce qui s'est passé ?
+    description: Quel resultat attendiez vous?
+    placeholder: Dites nous ce que vous voyez!
+    value: "Un problème est survenu!"
+  validations:
+    required: true
+- type: textarea
+  id: logs
+  attributes:
+    label: Les traces d'executions
+    description: Veuillez copier et coller toute sortie du log pertinent. Celui-ci sera automatiquement formaté en code.
+    render: shell
+- type: markdown
+  attributes:
+    value: |
+      Nous vous encourageons à suivre ce [Template de contribution](https://github.com/xunita/DLL_2023/blob/main/TEMPLATE-CONTRIBUTION.md) pour faciliter le processus de soumission d'Issues ou de Pull Requests (PR).
