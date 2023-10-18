@@ -18,6 +18,12 @@ public class Player extends Entity {
 	public void askName() {
 		System.out.println(messages.getString("name_question"));
 		String inputName = sc.nextLine();
+		do {
+			if (inputName.isEmpty()) {
+				System.out.println("Le nom ne doit pas être vide, veuillez saisir un nom valide");
+				inputName = sc.nextLine().trim();
+			}
+		} while (inputName.isEmpty());
 
 		while (inputName.length() > 20) {
             System.out.println(messages.getString("name_error"));
