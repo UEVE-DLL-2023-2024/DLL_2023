@@ -28,6 +28,7 @@ public class RPS {
 	public static void main(String[] args) {
 		RPS rps = new RPS();
 		rps.getPlayerName();
+		rps.getRules();
 		rps.getNumberOfRound();
 		char gameModeRPS = rps.getGameMode();
 		rps.startGame(gameModeRPS);
@@ -82,6 +83,12 @@ public class RPS {
 	public void getPlayerName() {
 		player.askName();
 	}
+
+	// Fonction utilisee pour demander si le joueur veut voir les rapports de puissances des signes
+	public void getRules() {
+		player.askRules();
+	}
+	
 	
 	public void getNumberOfRound(){
 		player.askNumberOfRound();
