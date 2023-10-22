@@ -66,7 +66,7 @@ public class Player extends Entity {
 			String input = sc.next();
 			try {
 				nbOfRound = Integer.parseInt(input);
-				if (nbOfRound <= 0) {
+				if (nbOfRound <= 0 || nbOfRound > 20) {
 					throw new Exception();
 				}
 				break;
