@@ -16,3 +16,4 @@
 - Maxime COMMARET, Maxime91680, m_commaret@orange.fr
 - Bilal KEBIR, bkebir, bilal.kebir.pro@gmail.com
 - Chahet Sid Ali, Sidalicha, chahetsidali@gmail.com
+- Yann LOYER, Yann377, yannloyer377@outlook.fr
