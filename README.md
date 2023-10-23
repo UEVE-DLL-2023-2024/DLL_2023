@@ -28,19 +28,19 @@ java -classpath "./bin/:res/" RPS
 
 ### Perspectives
 
-- Tableau de score:
-Il serait bien qu'au couss de la partie, ou à la fin de celle-ci, un tableau
-des scores soit affiché.
+- Tableau de score :
+Il serait bien qu'au cours de la partie, ou à la fin de celle-ci, un tableau
+des scores soit affichés.
 
-- Fin de partie:
+- Fin de partie :
 Il pourrait être intéressant de demander à l'utilisateur un nombre de manches à
 remporter pour gagner le jeu.
 
 - The big bang theory (Pierre - Feuille - Ciseaux - Lezard - Spock)
 Jouer au jeu Pierre - Feuille - Ciseaux - Lezard - Spock. Rappel des regles :
-  - La pierre bat le lezard et les ciseaux
+  - La pierre bat le lézard et les ciseaux
   - Le papier bat la pierre et Spock
-  - Les ciseaux battent le papier et le lezard
-  - Le lezard bat Spock et le papier
+  - Les ciseaux battent le papier et le lézard
+  - Le lézard bat Spock et le papier
   - Spock bat les ciseaux et la pierre
 
