@@ -45,7 +45,8 @@ public class RPS {
 		switch (result) {
 		case 0: 
 			System.out.println(messages.getString("egalite"));
-			break;
+			//En cas d'égalité la partie recommence
+			startGame(gameModeRPS);
 		case 1: 
 			System.out.println(player.getName()+ " " + messages.getString("player_win"));
 			player.incrementScore();
