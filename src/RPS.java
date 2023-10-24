@@ -36,6 +36,8 @@ public class RPS {
 
 	// Fonction appelee recursivement tant que le joueur souhaite jouer
 	public void startGame(char gameModeRPS) {
+		
+		System.out.println("Tant qu'il y a égalité la partie continue");
 		int playerSign = player.selectSign(gameModeRPS);
 		Controller.display(player.getName(), playerSign, messages);
 		int botSign = bot.selectSign(gameModeRPS);
