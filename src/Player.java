@@ -55,11 +55,6 @@ public class Player extends Entity {
 
     }
 
-
-	public int getNbOfRound() {
-		return nbOfRound;
-	}
-
 	public void askNumberOfRound(){
 		System.out.println(messages.getString("how_many_rounds"));
 		while (true) {

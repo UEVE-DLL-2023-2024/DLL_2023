@@ -35,45 +35,55 @@ public class RPS {
 		scoreboard = new Scoreboard(player, bot, messages);
 	}
 
+	Statistiques s = new Statistiques();
 	public static void main(String[] args) {
 		RPS rps = new RPS();
 		rps.getPlayerName();
 		rps.getRules();
 		rps.getNumberOfRound();
 		char gameModeRPS = rps.getGameMode();
+
 		rps.startGame(gameModeRPS);
 	}
 
 	// Fonction appelee recursivement tant que le joueur souhaite jouer
 	public void startGame(char gameModeRPS) {
-		
 		System.out.println("Tant qu'il y a égalité la partie continue");
+
 		int playerSign = player.selectSign(gameModeRPS);
 		Controller.display(player.getName(), playerSign, messages);
 		int botSign = bot.selectSign(gameModeRPS);
 		Controller.display("bot", botSign, messages);
 
 		int result = Controller.compareSigns(playerSign, botSign);
+
 		switch (result) {
 		case 0: 
 			System.out.println(messages.getString("egalite"));
 			System.out.println(messages.getString("contest"));
 			//En cas d'égalité la partie recommence
 			startGame(gameModeRPS);
+			s.ajoutegalites();
+			s.ajoutmanche();
 			break;
 		case 1: 
 			System.out.println(player.getName()+ " " + messages.getString("player_win"));
 			System.out.println(messages.getString("bravo"));
 			player.incrementScore();
+			s.ajoutvictoiremanche();
+			s.ajoutmanche();
 			break;
 		case -1: 
 			bot.incrementScore();
 			System.out.println(messages.getString("bot_win"));
 			System.out.println(messages.getString("next_time"));
+			s.ajoutdefaitemanche();
+			s.ajoutmanche();
 			break;
 		}
 
 		scoreboard.displayScore();
+
 
 		// Demande a l'utilisateur s'il veut jouer a nouveau
 		int nbRound = player.getNbOfRound();
@@ -82,6 +92,15 @@ public class RPS {
 		if (playerCount == nbRound || botCount == nbRound) {
 			sound(playerCount, botCount);
 			System.out.println(messages.getString("game_over"));
+			s.ajoutparties();
+			if(playerCount>botCount){
+				s.ajoutvictoire();
+			}
+			else{
+				s.ajoutdefaites();
+			}
+
+			System.out.println("Fin du jeu");
 			player.resetScore();
 			bot.resetScore();
 
@@ -100,6 +119,7 @@ public class RPS {
 				startGame(gameModeRPS);
 			} else {
 				System.out.println(messages.getString("game_over"));
+				s.displaystats();
 			}
 		} else {
 			startGame(gameModeRPS);
@@ -146,12 +166,7 @@ public class RPS {
 		player.askRules();
 	}
 
-<<<<<<< HEAD
 	public void getNumberOfRound() {
-=======
-
-	public void getNumberOfRound(){
->>>>>>> 831c584 (feature)
 		player.askNumberOfRound();
 	}
 
