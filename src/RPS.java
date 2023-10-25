@@ -57,15 +57,19 @@ public class RPS {
 		switch (result) {
 		case 0: 
 			System.out.println(messages.getString("egalite"));
+			System.out.println(messages.getString("contest"));
 			//En cas d'égalité la partie recommence
 			startGame(gameModeRPS);
+			break;
 		case 1: 
 			System.out.println(player.getName()+ " " + messages.getString("player_win"));
+			System.out.println(messages.getString("bravo"));
 			player.incrementScore();
 			break;
 		case -1: 
 			bot.incrementScore();
 			System.out.println(messages.getString("bot_win"));
+			System.out.println(messages.getString("next_time"));
 			break;
 		}
 
@@ -80,6 +84,16 @@ public class RPS {
 			System.out.println(messages.getString("game_over"));
 			player.resetScore();
 			bot.resetScore();
+
+			if (playerCount > botCount) {
+				System.out.println(player.getName() + " " + messages.getString("felicit"));
+			} else if (botCount > playerCount) {
+				System.out.println(messages.getString("bot_wins_game"));
+				System.out.println(messages.getString("victory_approaching"));
+			} else {
+				System.out.println(messages.getString("egalite_bravo"));
+			}
+
 			if (player.playAgain()) {
 				System.out.println();
 				getNumberOfRound();
@@ -132,7 +146,12 @@ public class RPS {
 		player.askRules();
 	}
 
+<<<<<<< HEAD
 	public void getNumberOfRound() {
+=======
+
+	public void getNumberOfRound(){
+>>>>>>> 831c584 (feature)
 		player.askNumberOfRound();
 	}
 
