@@ -245,8 +245,6 @@ En plus des composantes numériques, les projets peuvent utiliser une étiquette
 
 # Les composants du numéro de version
 
-</br>
-
 Il n'y a pas de limite au nombre de composants !
 :thought_balloon: La plupart des projets de vont pas au-delà de trois ou quatre. Cette norme permet de comprendre l'ordre entre deux releases, e.g. 0.1.2 est suivi de 0.1.3
 
@@ -423,6 +421,14 @@ Connaissez-vous des exemples de telles modification ?
 
 Modification apportée au numéro majeur : marque la modification des repères de compatibilité et peut ne pas vérifier la compatibilité ascendante et descendante.
 
+---
+
+# Gestion de sémantique de version
+
+</br>
+
+Modification apportée au numéro majeur : marque la modification des repères de compatibilité et peut ne pas vérifier la compatibilité ascendante et descendante.
+
 Connaissez-vous des exemples de telles modification ?
 - changements non rétrocompatibles dans l'API publique;
 - peut inclure de nouvelles fonctionnalités voir des nouveaux ensembles de fonctionnalités.
@@ -439,6 +445,12 @@ La version 2.6.0 doit pouvoir lire les fichiers écrits par la 2.5.4
 :warning: Si votre projet distribue des bibliothèques appelable depuis d'autres code, l'API est également un domaine de compatibilité :
 - Les règles de compatibilité source et binaire sont énoncées pour que vos utilisateurs ne se demandent jamais si c'est *"sûr"* de mettre à jour.
 - Regarder les chiffres permet de le savoir instantanément.
+
+---
+
+# Gestion de sémantique de version
+
+Cette approche de gestion des versions ne vient pas sans inconvénient. D'après vous, quel est-il ?
 
 ---
 
@@ -535,7 +547,7 @@ Cette convention ne rentre pas en conflit avec les lignes directrices de la pré
 
 <style scoped>
   section {
-    font-size: 26px;
+    font-size: 24px;
   }
 </style>
 
@@ -545,7 +557,7 @@ Cette convention ne rentre pas en conflit avec les lignes directrices de la pré
 
 <style scoped>
   section {
-    font-size: 26px;
+    font-size: 24px;
   }
 </style>
 
@@ -828,7 +840,7 @@ Comment faire pour mettre en place le système de vote ?
 
 Exemple de solution simple et pratique : utilisation d'un fichier texte *STATUS* ou *VOTES* dans la branche de la version :
 - répertorie tous les changements proposés;
-- répertorie tous les votes pour ou contre .chaque changement
+- répertorie tous les votes pour ou contre chaque changement
 
 *Illustration slide suivant*
 
@@ -857,7 +869,7 @@ Exemple de solution simple et pratique : utilisation d'un fichier texte *STATUS*
 
 # 2) Vote pour les changements
 
-La personne qui propose un changement est responsable de s’assurer qu’il s’applique sans conflits !S’il y a des conflits alors le texte associé au changement doit pointer vers un correctif ajusté OU une branche temporaire
+La personne qui propose un changement est responsable de s’assurer qu’il s’applique sans conflits ! S’il y a des conflits alors le texte associé au changement doit pointer vers un correctif ajusté OU une branche temporaire
 
 > * r13222, r13223, r13232
 >
@@ -1026,7 +1038,7 @@ Dans le cas des programmes Python, la *norme* veut qu’un utilisateur puisse in
 Même si une version officielle est un package de code source, les utilisateurs utilisent souvent des packages binaires !
 :thought_balloon: Peuvent être obtenus via le mécanisme de distribution de l’O.S., le site web du projet,  un tiers, ...
 
-:warning: Ici *"binaire"* ne signifie pas *"compilé"*. Ce désigne une forme préconfigurée du package !
+:warning: Ici *"binaire"* ne signifie pas *"compilé"*. Cela désigne une forme préconfigurée du package !
 - Cela permet à l’utilisateur d’installer sans passer par les procédures de build et d’installation basées sur les sources
 - Sur RedHat GNU/Linux → système RPM, sur Debian GNU/Linux → système APT (.deb), …
 
@@ -1172,6 +1184,41 @@ Nous avons parlé d'approbation des développeurs, mais qu'est ce que cela veut 
 Si ces vérifications (et potentiellement d’autres) sont satisfaites, les développeurs signent numériquement le package avec un programme produisant des signatures compatibles OpenPGP, e.g. GnuPG https://www.gnupg.org/
 
 **[Optionnel]** Illustration via gpg
+
+---
+
+<style scoped>
+  section {
+    font-size: 25px;
+  }
+</style>
+
+# Test avant publication
+
+```
+		# Signature GPG
+
+# Creation d'une clef paire de clef avec gpg (author)
+1) gpg --gen-key
+
+# Author signe l'archive et crée le fichier data.author.asc
+2) gpg -u author -a -o data.author.asc --detach-sig data.txt
+
+# Creation d'une clef paire de clef avec gpg (validator)
+3) gpg --gen-key
+
+# Validator récupère les fichier data.author.asc et data.txt, vérifie qu'il a une signature valide de author et signe aussi
+4) gpg --verify data.author.asc data.txt
+   gpg -u validator -a -o data.validator.asc --detach-sig data.txt
+
+# On a ainsi 3 fichiers et on peut les verifier un à un
+5) gpg --verify data.author.asc data.txt
+   gpg --verify data.validator.asc data.txt
+
+# Note : il est possible de réduire le nombre de fichier en 1 seul
+   cat *.asc > allsigs.asc
+   gpg --verify allsigs.asc data.txt
+```
 
 ---
 
