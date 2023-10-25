@@ -21,3 +21,4 @@
 - Yunus Sunner, Yunus-S, sunner9155@gmail.com
 - Aichetou CAMARA, aichetou33, aichetoucamara91@gmail.com
 - Sarah BELHADDAD, BelhaddadSarah, belhaddad.sarah96@gmail.com
+- Remi 
