@@ -22,3 +22,4 @@
 - Aichetou CAMARA, aichetou33, aichetoucamara91@gmail.com
 - Sarah BELHADDAD, BelhaddadSarah, belhaddad.sarah96@gmail.com
 - Remi 
+- Zakari BOUMAZA, zackbmz9106, zackboum.zb@gmail.com

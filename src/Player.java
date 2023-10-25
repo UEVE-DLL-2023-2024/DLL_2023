@@ -44,7 +44,8 @@ public class Player extends Entity {
                 "papier > pierre & Spock\r\n" + //
                 "ciseaux > papier & Lezard\r\n" + //
                 "Lezard > Spock & papier\r\n" + //
-                "Spock > ciseaux & pierre\r\n");
+                "Spock > ciseaux & pierre\r\n" + //
+				"Le mode Halloween fait résuscité le joueur si le bot gagne\r\n");
             }
         else if (c == 'N'){}
 
@@ -85,7 +86,7 @@ public class Player extends Entity {
 
 		if(gameModeRPS == 'B'){
 			options = rock + " " + paper + " " + scissors + " " + lizard + " " + spock;
-		} else{
+		} else if (gameModeRPS == 'C' || gameModeRPS =='H') {
 			options = rock + " " + paper + " " + scissors;
 		}
 
