@@ -89,8 +89,23 @@ public class RPS {
 		int nbRound = player.getNbOfRound();
 		int playerCount = player.getScore();
 		int botCount = bot.getScore();
+<<<<<<< HEAD
 		if (playerCount == nbRound || botCount == nbRound) {
 			sound(playerCount, botCount);
+=======
+		if (playerCount == nbRound || botCount == nbRound){
+
+		if(botCount > playerCount ) {
+			if (gameModeRPS == 'H') {
+				// Si le mode halloween est choisit, remise des compteurs à 0
+				System.out.println("Boo !! Vous venez d'etre ressucité, les compteurs sont mis à 0 !");
+				player.resetScore();
+				bot.resetScore();
+				getNumberOfRound();
+				startGame(gameModeRPS);
+			}
+		}
+>>>>>>> b07efea (feature)
 			System.out.println(messages.getString("game_over"));
 			s.ajoutparties();
 			if(playerCount>botCount){
@@ -174,7 +189,11 @@ public class RPS {
 		System.out.println(messages.getString("select_game_mode"));
 		String gameMode = sc.next();
 		char c = gameMode.charAt(0);
+<<<<<<< HEAD
 		if (c != 'C' && c != 'B') {
+=======
+		if(c != 'C' && c != 'B' && c != 'H'){
+>>>>>>> b07efea (feature)
 			getGameMode();
 		}
 		return c;

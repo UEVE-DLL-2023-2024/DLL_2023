@@ -8,7 +8,7 @@ public class Bot extends Entity {
 	@Override
 	public int selectSign(char gameModeRPS) {
 		Random random = new Random();
-		if(gameModeRPS == 'C'){
+		if(gameModeRPS == 'C' || gameModeRPS =='H'){
 			return random.nextInt(3) + 1;
 		}
 		else{
