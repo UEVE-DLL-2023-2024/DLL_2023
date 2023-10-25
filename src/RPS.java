@@ -2,6 +2,16 @@ import java.util.Locale;
 import java.util.ResourceBundle;
 
 import java.util.Scanner;
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+import java.awt.image.BufferedImage;
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+import javax.swing.JFrame;
+import java.io.File;
+import java.io.IOException;
 
 public class RPS {
 	private Player player;
@@ -65,7 +75,8 @@ public class RPS {
 		int nbRound = player.getNbOfRound();
 		int playerCount = player.getScore();
 		int botCount = bot.getScore();
-		if (playerCount == nbRound || botCount == nbRound){
+		if (playerCount == nbRound || botCount == nbRound) {
+			sound(playerCount, botCount);
 			System.out.println(messages.getString("game_over"));
 			player.resetScore();
 			bot.resetScore();
@@ -76,10 +87,38 @@ public class RPS {
 			} else {
 				System.out.println(messages.getString("game_over"));
 			}
-		 }
-		 else { 
+		} else {
 			startGame(gameModeRPS);
 		}
+	}
+
+	// Fonction mettre une musique à la fin de la partie
+	public void sound(int playerCount, int botCount) {
+		try {
+			String filepath = playerCount > botCount ? "./src/Son_Gagne.wav" : "./src/Son_Perdu.wav";
+			AudioInputStream aui = AudioSystem.getAudioInputStream(new File(filepath).toURI().toURL());
+			Clip clip = AudioSystem.getClip();
+			clip.open(aui);
+			clip.start();
+		} catch (Exception e) {
+			try {
+				File file = playerCount > botCount ? new File("./src/Image_Gagne.png")
+						: new File("./src/Image_Perdu.png");
+
+				BufferedImage image = ImageIO.read(file);
+				ImageIcon imageIcon = new ImageIcon(image);
+				JLabel jLabel = new JLabel();
+				jLabel.setIcon(imageIcon);
+				JFrame frame = new JFrame("Partie finie");
+				frame.getContentPane().add(jLabel);
+				frame.pack();
+				frame.setVisible(true);
+
+			} catch (IOException e1) {
+				System.out.println("L'image n'a pas pu s'afficher");
+			}
+		}
+
 	}
 
 	// Fonction utilisee pour demander le nom du joueur
@@ -87,21 +126,21 @@ public class RPS {
 		player.askName();
 	}
 
-	// Fonction utilisee pour demander si le joueur veut voir les rapports de puissances des signes
+	// Fonction utilisee pour demander si le joueur veut voir les rapports de
+	// puissances des signes
 	public void getRules() {
 		player.askRules();
 	}
-	
-	
-	public void getNumberOfRound(){
+
+	public void getNumberOfRound() {
 		player.askNumberOfRound();
 	}
 
-	public char getGameMode(){
+	public char getGameMode() {
 		System.out.println(messages.getString("select_game_mode"));
 		String gameMode = sc.next();
 		char c = gameMode.charAt(0);
-		if(c != 'C' && c != 'B'){
+		if (c != 'C' && c != 'B') {
 			getGameMode();
 		}
 		return c;
